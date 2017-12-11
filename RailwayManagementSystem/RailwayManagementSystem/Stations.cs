@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RailwayManagementSystem
 {
-    class Stations
+    internal class Stations
     {
     }
 }
