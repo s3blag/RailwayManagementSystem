@@ -11,28 +11,32 @@ using System.Windows.Forms;
 
 namespace RailwayManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class CashierForm : Form
     {
         SqlConnection sqlConnection;
         SqlDataAdapter sqlDataAdapter;
 
-        public Form1()
+        public CashierForm()
         {
             InitializeComponent();
             sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public CashierForm(SqlConnection sqlConnection)
+        {
+            InitializeComponent();
+            this.sqlConnection = sqlConnection;
+            
+        }
+
+        private void CashierForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            sqlDataAdapter = new SqlDataAdapter("SELECT * FROM SHOW_TRAINS", sqlConnection);
-            DataTable dataTable = new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-            dataGridView1.DataSource = dataTable;
-        }
+        //sqlDataAdapter = new SqlDataAdapter("SELECT * FROM SHOW_TRAINS", sqlConnection);
+        //DataTable dataTable = new DataTable();
+        //sqlDataAdapter.Fill(dataTable);
+        //dataGridView1.DataSource = dataTable;
     }
 }
