@@ -108,19 +108,7 @@
     <None Include="Resources\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="background2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="backgroundOpacity.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bckgrnd.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="b.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

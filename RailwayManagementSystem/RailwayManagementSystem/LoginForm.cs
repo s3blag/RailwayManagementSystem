@@ -30,6 +30,7 @@ namespace RailwayManagementSystem
         {
             comboBoxUserType.SelectedIndex = 1;
             textBoxPassword.Text = "Hasło";
+            this.ActiveControl =textBoxPassword;
         }
 
         private bool CheckPassword(string password, int comboBoxIndex)
@@ -94,6 +95,15 @@ namespace RailwayManagementSystem
         private void comboBoxUserType_DropDownClosed(object sender, EventArgs e)
         {
                // this.BeginInvoke(new Action(() => { comboBoxUserType.Select(0, 0); }));
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToInt16(Keys.Enter))
+            {
+                buttonLogin.PerformClick();
+                e.Handled = true;      
+            }
         }
     }
 }

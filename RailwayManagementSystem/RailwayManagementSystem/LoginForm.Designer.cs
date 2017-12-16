@@ -36,7 +36,7 @@
             // 
             // buttonLogin
             // 
-            this.buttonLogin.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.buttonLogin.BackColor = System.Drawing.SystemColors.ControlLight;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogin.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.buttonLogin.Location = new System.Drawing.Point(185, 255);
@@ -50,9 +50,9 @@
             // 
             // comboBoxUserType
             // 
-            this.comboBoxUserType.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.comboBoxUserType.BackColor = System.Drawing.SystemColors.ControlLight;
             this.comboBoxUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxUserType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxUserType.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBoxUserType.Items.AddRange(new object[] {
             "Administrator",
             "Kasjer"});
@@ -70,6 +70,7 @@
             this.textBoxPassword.Size = new System.Drawing.Size(121, 20);
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_KeyPress);
             // 
             // LoginForm
             // 
@@ -79,8 +80,8 @@
             this.BackgroundImage = global::RailwayManagementSystem.Properties.Resources.bckgrnd;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(474, 403);
-            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.comboBoxUserType);
+            this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonLogin);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
