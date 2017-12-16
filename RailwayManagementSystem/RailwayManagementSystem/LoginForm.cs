@@ -19,6 +19,8 @@ namespace RailwayManagementSystem
         private static string adminPassword = "admin";
         private static string cashierPassword = "cashier";
 
+        bool textBoxModified = false;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace RailwayManagementSystem
             comboBoxUserType.SelectedIndex = 1;
             textBoxPassword.Text = "Hasło";
             this.ActiveControl =textBoxPassword;
+            textBoxPassword.SelectionStart = 0;
         }
 
         private bool CheckPassword(string password, int comboBoxIndex)
@@ -86,23 +89,21 @@ namespace RailwayManagementSystem
             this.Close();
         }
 
-        private void textBoxPassword_Click(object sender, EventArgs e)
-        {
-            textBoxPassword.Clear();
-            textBoxPassword.UseSystemPasswordChar = true;
-        }
-
-        private void comboBoxUserType_DropDownClosed(object sender, EventArgs e)
-        {
-               // this.BeginInvoke(new Action(() => { comboBoxUserType.Select(0, 0); }));
-        }
-
         private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (e.KeyChar == Convert.ToInt16(Keys.Enter))
             {
                 buttonLogin.PerformClick();
-                e.Handled = true;      
+                e.Handled = true;
+            }
+            if (!textBoxModified)
+            {
+                textBoxModified = true;
+                textBoxPassword.Clear();
+                textBoxPassword.UseSystemPasswordChar = true;
+                textBoxPassword.Text = e.KeyChar.ToString();
+                textBoxPassword.SelectionStart = 1;
             }
         }
     }

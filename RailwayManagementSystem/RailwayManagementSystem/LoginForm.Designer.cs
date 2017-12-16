@@ -61,7 +61,6 @@
             this.comboBoxUserType.Size = new System.Drawing.Size(121, 21);
             this.comboBoxUserType.Sorted = true;
             this.comboBoxUserType.TabIndex = 0;
-            this.comboBoxUserType.DropDownClosed += new System.EventHandler(this.comboBoxUserType_DropDownClosed);
             // 
             // textBoxPassword
             // 
@@ -69,7 +68,6 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(121, 20);
             this.textBoxPassword.TabIndex = 4;
-            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_Click);
             this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_KeyPress);
             // 
             // LoginForm
@@ -77,7 +75,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = global::RailwayManagementSystem.Properties.Resources.bckgrnd;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(474, 403);
             this.Controls.Add(this.comboBoxUserType);
