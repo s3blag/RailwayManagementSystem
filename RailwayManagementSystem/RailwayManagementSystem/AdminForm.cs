@@ -26,6 +26,7 @@ namespace RailwayManagementSystem
         public AdminForm(SqlConnection sqlConnection)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.sqlConnection = sqlConnection;
         }
 

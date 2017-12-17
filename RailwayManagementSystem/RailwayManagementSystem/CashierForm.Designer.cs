@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,12 +43,23 @@
             this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonAddNewCustomer = new System.Windows.Forms.Button();
+            this.textBoxCustomerSurname = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.buttonAddNewCustomer = new System.Windows.Forms.Button();
+            this.textBoxCustomerAddress1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxCustomerAddress2 = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerZipCode = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxCustomerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxCustomerEmail = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,6 +72,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -69,6 +82,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(722, 750);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -200,32 +214,60 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.textBoxCustomerEmail);
+            this.groupBox3.Controls.Add(this.textBoxCustomerPhoneNumber);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.textBoxCustomerZipCode);
+            this.groupBox3.Controls.Add(this.textBoxCustomerAddress2);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.textBoxCustomerAddress1);
             this.groupBox3.Controls.Add(this.buttonAddNewCustomer);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.textBoxCustomerSurname);
+            this.groupBox3.Controls.Add(this.textBoxCustomerName);
             this.groupBox3.Location = new System.Drawing.Point(6, 408);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(702, 101);
+            this.groupBox3.Size = new System.Drawing.Size(702, 143);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dodaj klienta";
             // 
-            // textBox1
+            // buttonAddNewCustomer
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.buttonAddNewCustomer.Location = new System.Drawing.Point(596, 64);
+            this.buttonAddNewCustomer.Name = "buttonAddNewCustomer";
+            this.buttonAddNewCustomer.Size = new System.Drawing.Size(92, 23);
+            this.buttonAddNewCustomer.TabIndex = 2;
+            this.buttonAddNewCustomer.Text = "Dodaj";
+            this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
+            this.buttonAddNewCustomer.Click += new System.EventHandler(this.buttonAddNewCustomer_Click);
             // 
-            // textBox2
+            // textBoxCustomerSurname
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxCustomerSurname.Location = new System.Drawing.Point(6, 90);
+            this.textBoxCustomerSurname.Name = "textBoxCustomerSurname";
+            this.textBoxCustomerSurname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerSurname.TabIndex = 2;
+            // 
+            // textBoxCustomerName
+            // 
+            this.textBoxCustomerName.Location = new System.Drawing.Point(6, 46);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerName.TabIndex = 3;
             // 
             // dataGridViewCustomers
             // 
+            this.dataGridViewCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCustomers.Location = new System.Drawing.Point(6, 6);
             this.dataGridViewCustomers.Name = "dataGridViewCustomers";
@@ -241,20 +283,109 @@
             this.tabPage3.Text = "Rezerwacje";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // buttonAddNewCustomer
+            // textBoxCustomerAddress1
             // 
-            this.buttonAddNewCustomer.Location = new System.Drawing.Point(621, 43);
-            this.buttonAddNewCustomer.Name = "buttonAddNewCustomer";
-            this.buttonAddNewCustomer.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddNewCustomer.TabIndex = 2;
-            this.buttonAddNewCustomer.Text = "Dodaj";
-            this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
-            this.buttonAddNewCustomer.Click += new System.EventHandler(this.buttonAddNewCustomer_Click);
+            this.textBoxCustomerAddress1.Location = new System.Drawing.Point(159, 46);
+            this.textBoxCustomerAddress1.Name = "textBoxCustomerAddress1";
+            this.textBoxCustomerAddress1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerAddress1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Imię:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Nazwisko:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(156, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Adres 1:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(156, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Adres 2:";
+            // 
+            // textBoxCustomerAddress2
+            // 
+            this.textBoxCustomerAddress2.Location = new System.Drawing.Point(159, 90);
+            this.textBoxCustomerAddress2.Name = "textBoxCustomerAddress2";
+            this.textBoxCustomerAddress2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerAddress2.TabIndex = 9;
+            // 
+            // textBoxCustomerZipCode
+            // 
+            this.textBoxCustomerZipCode.Location = new System.Drawing.Point(313, 46);
+            this.textBoxCustomerZipCode.Name = "textBoxCustomerZipCode";
+            this.textBoxCustomerZipCode.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerZipCode.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(310, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Kod pocztowy:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(310, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Nr. telefonu:";
+            // 
+            // textBoxCustomerPhoneNumber
+            // 
+            this.textBoxCustomerPhoneNumber.Location = new System.Drawing.Point(313, 90);
+            this.textBoxCustomerPhoneNumber.Name = "textBoxCustomerPhoneNumber";
+            this.textBoxCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerPhoneNumber.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(464, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Email:";
+            // 
+            // textBoxCustomerEmail
+            // 
+            this.textBoxCustomerEmail.Location = new System.Drawing.Point(467, 66);
+            this.textBoxCustomerEmail.Name = "textBoxCustomerEmail";
+            this.textBoxCustomerEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerEmail.TabIndex = 14;
             // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(746, 774);
             this.Controls.Add(this.tabControl1);
             this.Name = "CashierForm";
@@ -276,8 +407,6 @@
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -290,14 +419,25 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCityA;
         private System.Windows.Forms.DataGridView dataGridViewCourses;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button buttonShowCourseVisits;
         private System.Windows.Forms.TextBox textBoxCourseVisits;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewCustomers;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxCustomerSurname;
+        private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.Button buttonAddNewCustomer;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBoxCustomerEmail;
+        private System.Windows.Forms.TextBox textBoxCustomerPhoneNumber;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxCustomerZipCode;
+        private System.Windows.Forms.TextBox textBoxCustomerAddress2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxCustomerAddress1;
     }
 }

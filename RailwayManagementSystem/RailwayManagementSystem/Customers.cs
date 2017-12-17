@@ -35,7 +35,6 @@ namespace RailwayManagementSystem
 
         public static DataTable GetAllCustomers(SqlConnection sqlConnection)
         {   
-            
             try
             {
                 using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM Show_Customers", sqlConnection))
@@ -65,6 +64,7 @@ namespace RailwayManagementSystem
                                  $"'{customerData.address}', '{customerData.city}', '{customerData.zipCode}'," +
                                  $"'{customerData.phoneNumber}', '{customerData.email}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
                 return true;
@@ -73,8 +73,7 @@ namespace RailwayManagementSystem
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return false;
-            }
-            
+            } 
         }
 
     }

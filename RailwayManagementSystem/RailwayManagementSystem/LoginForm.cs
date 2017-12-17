@@ -64,14 +64,14 @@ namespace RailwayManagementSystem
                 switch (comboBoxUserType.SelectedIndex)
                 {
                     case 0:
-                        var adminForm = new AdminForm();
+                        var adminForm = new AdminForm(this.sqlConnection);
                         adminForm.FormClosed += new FormClosedEventHandler(ChildForm_FormClosed);
                         adminForm.Show();
                         this.Hide();
                         break;
 
                     case 1:
-                        var cashierForm = new CashierForm();
+                        var cashierForm = new CashierForm(this.sqlConnection);
                         cashierForm.FormClosed += new FormClosedEventHandler(ChildForm_FormClosed);
                         cashierForm.Show();
                         this.Hide();

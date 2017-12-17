@@ -26,8 +26,9 @@ namespace RailwayManagementSystem
         public CashierForm(SqlConnection sqlConnection)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.sqlConnection = sqlConnection;
-            
+            dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
         }
 
         private void CashierForm_Load(object sender, EventArgs e)
@@ -60,13 +61,35 @@ namespace RailwayManagementSystem
 
         private void buttonAddNewCustomer_Click(object sender, EventArgs e)
         {
-            if (Customers.AddNewCustomer(sqlConnection, new Customers.CustomerData("Łukasz", "Zatorski", "Prosta 1", "Wrocław", "50-439", "123456789", "zatorski@zatorski.pl")))
+            bool isDataCorrect = true;
+
+            string SetDataIncorrect()
             {
-                MessageBox.Show("Pomyślnie dodano użytkownika");
-                dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
+                isDataCorrect = false;
+                return "";
+            }
+
+            var customerData = new Customers.CustomerData(textBoxCustomerName.Text != "" ? textBoxCustomerName.Text : SetDataIncorrect(),
+                                                          textBoxCustomerSurname.Text != "" ? textBoxCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxCustomerAddress1.Text != "" ? textBoxCustomerAddress1.Text : SetDataIncorrect(),
+                                                          textBoxCustomerAddress2.Text != "" ? textBoxCustomerAddress2.Text : SetDataIncorrect(),
+                                                          textBoxCustomerZipCode.Text != "" ? textBoxCustomerZipCode.Text : SetDataIncorrect(),
+                                                          textBoxCustomerPhoneNumber.Text != "" ? textBoxCustomerPhoneNumber.Text : SetDataIncorrect(),
+                                                          textBoxCustomerEmail.Text != "" ? textBoxCustomerEmail.Text : SetDataIncorrect());
+            if (isDataCorrect)
+            {
+                if (Customers.AddNewCustomer(sqlConnection, customerData))
+                {
+                    MessageBox.Show("Pomyślnie dodano użytkownika");
+                    dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
+                }
+                else
+                    //Taki użytkownik już istnieje
+                    MessageBox.Show("Nie udało się dodać użytkownika!");
             }
             else
-                MessageBox.Show("Nie udało się dodać użytkownika!");
+                MessageBox.Show("Błędne dane! Pola nie mogą być puste!");
+           
         }
     }
 }
