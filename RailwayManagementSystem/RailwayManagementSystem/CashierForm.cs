@@ -14,12 +14,13 @@ namespace RailwayManagementSystem
     public partial class CashierForm : Form
     {
         SqlConnection sqlConnection;
-        SqlDataAdapter sqlDataAdapter;
 
         public CashierForm()
-        {
+        {   
             InitializeComponent();
+            this.CenterToScreen();
             sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
         }
 
         public CashierForm(SqlConnection sqlConnection)
@@ -34,9 +35,38 @@ namespace RailwayManagementSystem
 
         }
 
-        //sqlDataAdapter = new SqlDataAdapter("SELECT * FROM SHOW_TRAINS", sqlConnection);
-        //DataTable dataTable = new DataTable();
-        //sqlDataAdapter.Fill(dataTable);
-        //dataGridView1.DataSource = dataTable;
+        private void buttonSearchAtoB_Click(object sender, EventArgs e)
+        {
+            using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, textBoxCityA.Text, textBoxCityB.Text))
+            {
+                if ( dataTable != null)
+                    dataGridViewCourses.DataSource = dataTable;
+                else
+                    MessageBox.Show("Kurs o podanych danych nie istnieje!");
+            }
+           
+        }
+
+        private void buttonShowCourseVisits_Click(object sender, EventArgs e)
+        {
+            using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, textBoxCourseVisits.Text))
+            {   
+                if (dataTable != null)
+                    dataGridViewCourses.DataSource = dataTable;
+                else
+                    MessageBox.Show("Kurs o podanych danych nie istnieje!");
+            }
+        }
+
+        private void buttonAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            if (Customers.AddNewCustomer(sqlConnection, new Customers.CustomerData("Łukasz", "Zatorski", "Prosta 1", "Wrocław", "50-439", "123456789", "zatorski@zatorski.pl")))
+            {
+                MessageBox.Show("Pomyślnie dodano użytkownika");
+                dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
+            }
+            else
+                MessageBox.Show("Nie udało się dodać użytkownika!");
+        }
     }
 }

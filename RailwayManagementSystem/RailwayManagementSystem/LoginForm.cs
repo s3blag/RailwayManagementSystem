@@ -31,8 +31,8 @@ namespace RailwayManagementSystem
         private void LoginForm_Load(object sender, EventArgs e)
         {
             comboBoxUserType.SelectedIndex = 1;
-            textBoxPassword.Text = "Hasło";
-            this.ActiveControl =textBoxPassword;
+            textBoxPassword.Text = "Podaj hasło...";
+            this.ActiveControl = textBoxPassword;
             textBoxPassword.SelectionStart = 0;
         }
 
@@ -52,7 +52,6 @@ namespace RailwayManagementSystem
                         return false;
                 default:
                     return false;
-               
             }
 
         }
@@ -97,6 +96,7 @@ namespace RailwayManagementSystem
                 buttonLogin.PerformClick();
                 e.Handled = true;
             }
+
             if (!textBoxModified)
             {
                 textBoxModified = true;

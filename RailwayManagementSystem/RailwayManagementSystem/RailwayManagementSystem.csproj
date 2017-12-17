@@ -110,5 +110,8 @@
   <ItemGroup>
     <None Include="bckgrnd.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bckgrnd2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

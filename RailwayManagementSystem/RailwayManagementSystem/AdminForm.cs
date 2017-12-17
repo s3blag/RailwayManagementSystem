@@ -19,6 +19,7 @@ namespace RailwayManagementSystem
         public AdminForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
             sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
         }
 
@@ -32,11 +33,6 @@ namespace RailwayManagementSystem
         {
 
         }
-
-        //sqlDataAdapter = new SqlDataAdapter("SELECT * FROM SHOW_TRAINS", sqlConnection);
-        //DataTable dataTable = new DataTable();
-        //sqlDataAdapter.Fill(dataTable);
-        //dataGridView1.DataSource = dataTable;
 
     }
 }
