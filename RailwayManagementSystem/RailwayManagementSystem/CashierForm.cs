@@ -97,13 +97,13 @@ namespace RailwayManagementSystem
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {   
-            string name = textBoxSearchByName.Text;
+            var name = textBoxSearchByName.Text;
             var surname = textBoxSearchBySurname.Text;
             var email = textBoxSearchByEmail.Text;
             var phoneNumber = textBoxSearchByPhoneNumber.Text;
 
-            string rowFilter = "";
             DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
+            string rowFilter = "";
 
             rowFilter = string.Format("Imię LIKE '{0}%'", name);
             rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
