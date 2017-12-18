@@ -42,30 +42,40 @@
             this.textBoxCityA = new System.Windows.Forms.TextBox();
             this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textBoxSearchByPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxSearchByEmail = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxSearchBySurname = new System.Windows.Forms.TextBox();
+            this.textBoxSearchByName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxCustomerEmail = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxCustomerZipCode = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerAddress2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxCustomerAddress1 = new System.Windows.Forms.TextBox();
             this.buttonAddNewCustomer = new System.Windows.Forms.Button();
             this.textBoxCustomerSurname = new System.Windows.Forms.TextBox();
             this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBoxCustomerAddress1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxCustomerAddress2 = new System.Windows.Forms.TextBox();
-            this.textBoxCustomerZipCode = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxCustomerPhoneNumber = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxCustomerEmail = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
             this.SuspendLayout();
@@ -202,6 +212,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.dataGridViewCustomers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -211,6 +222,95 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Klienci";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.textBoxSearchByPhoneNumber);
+            this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label13);
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.textBoxSearchByEmail);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.textBoxSearchBySurname);
+            this.groupBox4.Controls.Add(this.textBoxSearchByName);
+            this.groupBox4.Location = new System.Drawing.Point(6, 557);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(702, 161);
+            this.groupBox4.TabIndex = 2;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Wyszukaj klienta";
+            // 
+            // textBoxSearchByPhoneNumber
+            // 
+            this.textBoxSearchByPhoneNumber.Location = new System.Drawing.Point(536, 78);
+            this.textBoxSearchByPhoneNumber.Name = "textBoxSearchByPhoneNumber";
+            this.textBoxSearchByPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchByPhoneNumber.TabIndex = 17;
+            //this.textBoxSearchByPhoneNumber.TextChanged += new System.EventHandler(this.textBoxSearchByPhoneNumber_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(533, 62);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(65, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Nr. telefonu:";
+
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(380, 62);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 13);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Email:";
+
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(227, 62);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Nazwisko:";
+
+            // 
+            // textBoxSearchByEmail
+            // 
+            this.textBoxSearchByEmail.Location = new System.Drawing.Point(383, 78);
+            this.textBoxSearchByEmail.Name = "textBoxSearchByEmail";
+            this.textBoxSearchByEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchByEmail.TabIndex = 16;
+           
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(74, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Imię:";
+
+            // 
+            // textBoxSearchBySurname
+            // 
+            this.textBoxSearchBySurname.Location = new System.Drawing.Point(230, 78);
+            this.textBoxSearchBySurname.Name = "textBoxSearchBySurname";
+            this.textBoxSearchBySurname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchBySurname.TabIndex = 7;
+            
+            // 
+            // textBoxSearchByName
+            // 
+            this.textBoxSearchByName.Location = new System.Drawing.Point(77, 78);
+            this.textBoxSearchByName.Name = "textBoxSearchByName";
+            this.textBoxSearchByName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchByName.TabIndex = 8;
+           
             // 
             // groupBox3
             // 
@@ -239,11 +339,109 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dodaj klienta";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(462, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "Email:";
+            // 
+            // textBoxCustomerEmail
+            // 
+            this.textBoxCustomerEmail.Location = new System.Drawing.Point(465, 66);
+            this.textBoxCustomerEmail.Name = "textBoxCustomerEmail";
+            this.textBoxCustomerEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerEmail.TabIndex = 14;
+            // 
+            // textBoxCustomerPhoneNumber
+            // 
+            this.textBoxCustomerPhoneNumber.Location = new System.Drawing.Point(312, 90);
+            this.textBoxCustomerPhoneNumber.Name = "textBoxCustomerPhoneNumber";
+            this.textBoxCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerPhoneNumber.TabIndex = 13;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(309, 73);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 13);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Nr. telefonu:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(309, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Kod pocztowy:";
+            // 
+            // textBoxCustomerZipCode
+            // 
+            this.textBoxCustomerZipCode.Location = new System.Drawing.Point(312, 46);
+            this.textBoxCustomerZipCode.Name = "textBoxCustomerZipCode";
+            this.textBoxCustomerZipCode.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerZipCode.TabIndex = 10;
+            // 
+            // textBoxCustomerAddress2
+            // 
+            this.textBoxCustomerAddress2.Location = new System.Drawing.Point(159, 90);
+            this.textBoxCustomerAddress2.Name = "textBoxCustomerAddress2";
+            this.textBoxCustomerAddress2.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerAddress2.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(156, 73);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Adres 2:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(156, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(46, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Adres 1:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 73);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Nazwisko:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Imię:";
+            // 
+            // textBoxCustomerAddress1
+            // 
+            this.textBoxCustomerAddress1.Location = new System.Drawing.Point(159, 46);
+            this.textBoxCustomerAddress1.Name = "textBoxCustomerAddress1";
+            this.textBoxCustomerAddress1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerAddress1.TabIndex = 4;
+            // 
             // buttonAddNewCustomer
             // 
-            this.buttonAddNewCustomer.Location = new System.Drawing.Point(596, 64);
+            this.buttonAddNewCustomer.Location = new System.Drawing.Point(604, 66);
             this.buttonAddNewCustomer.Name = "buttonAddNewCustomer";
-            this.buttonAddNewCustomer.Size = new System.Drawing.Size(92, 23);
+            this.buttonAddNewCustomer.Size = new System.Drawing.Size(92, 20);
             this.buttonAddNewCustomer.TabIndex = 2;
             this.buttonAddNewCustomer.Text = "Dodaj";
             this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
@@ -283,104 +481,6 @@
             this.tabPage3.Text = "Rezerwacje";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBoxCustomerAddress1
-            // 
-            this.textBoxCustomerAddress1.Location = new System.Drawing.Point(159, 46);
-            this.textBoxCustomerAddress1.Name = "textBoxCustomerAddress1";
-            this.textBoxCustomerAddress1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerAddress1.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Imię:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 73);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Nazwisko:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(156, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Adres 1:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(156, 73);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Adres 2:";
-            // 
-            // textBoxCustomerAddress2
-            // 
-            this.textBoxCustomerAddress2.Location = new System.Drawing.Point(159, 90);
-            this.textBoxCustomerAddress2.Name = "textBoxCustomerAddress2";
-            this.textBoxCustomerAddress2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerAddress2.TabIndex = 9;
-            // 
-            // textBoxCustomerZipCode
-            // 
-            this.textBoxCustomerZipCode.Location = new System.Drawing.Point(313, 46);
-            this.textBoxCustomerZipCode.Name = "textBoxCustomerZipCode";
-            this.textBoxCustomerZipCode.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerZipCode.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(310, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Kod pocztowy:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(310, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Nr. telefonu:";
-            // 
-            // textBoxCustomerPhoneNumber
-            // 
-            this.textBoxCustomerPhoneNumber.Location = new System.Drawing.Point(313, 90);
-            this.textBoxCustomerPhoneNumber.Name = "textBoxCustomerPhoneNumber";
-            this.textBoxCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerPhoneNumber.TabIndex = 13;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(464, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(35, 13);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "Email:";
-            // 
-            // textBoxCustomerEmail
-            // 
-            this.textBoxCustomerEmail.Location = new System.Drawing.Point(467, 66);
-            this.textBoxCustomerEmail.Name = "textBoxCustomerEmail";
-            this.textBoxCustomerEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerEmail.TabIndex = 14;
-            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,6 +499,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).EndInit();
@@ -439,5 +541,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxCustomerAddress1;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox textBoxSearchByPhoneNumber;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxSearchByEmail;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxSearchBySurname;
+        private System.Windows.Forms.TextBox textBoxSearchByName;
     }
 }
