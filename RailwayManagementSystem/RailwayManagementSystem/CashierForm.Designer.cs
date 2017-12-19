@@ -85,20 +85,32 @@
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBoxAddReservationCityB = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationCityA = new System.Windows.Forms.TextBox();
-            this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
-            this.buttonAdReservationSearchCoursesAB = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.buttonAddReservation = new System.Windows.Forms.Button();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.textBoxAddReservationNewCustomerEmail = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationNewCustomerPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationNewCustomerZipCode = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationNewCustomerCity = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationNewCustomerAddress1 = new System.Windows.Forms.TextBox();
+            this.buttonAddReservationAddNewCustomer = new System.Windows.Forms.Button();
+            this.textBoxAddReservationNewCustomerSurname = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationNewCustomerName = new System.Windows.Forms.TextBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.buttonAddReservationSaveCourseID = new System.Windows.Forms.Button();
-            this.radioButtonReducedTicket = new System.Windows.Forms.RadioButton();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.radioButtonRegularTicket = new System.Windows.Forms.RadioButton();
+            this.radioButtonReducedTicket = new System.Windows.Forms.RadioButton();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.buttonAddReservationSaveSelectedCustomer = new System.Windows.Forms.Button();
             this.textBoxAddReservationSearchCustomerPhoneNumber = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -107,26 +119,14 @@
             this.label29 = new System.Windows.Forms.Label();
             this.textBoxAddReservationSearchCustomerSurname = new System.Windows.Forms.TextBox();
             this.textBoxAddReservationSearchCustomerName = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.buttonAddReservationSaveSelectedCustomer = new System.Windows.Forms.Button();
-            this.textBoxAddReservationNewCustomerName = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationNewCustomerSurname = new System.Windows.Forms.TextBox();
-            this.buttonAddReservationAddNewCustomer = new System.Windows.Forms.Button();
-            this.textBoxAddReservationNewCustomerAddress1 = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationNewCustomerCity = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationNewCustomerZipCode = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationNewCustomerPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxAddReservationNewCustomerEmail = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.buttonAddReservation = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.buttonAdReservationSearchCoursesAB = new System.Windows.Forms.Button();
+            this.textBoxAddReservationCityA = new System.Windows.Forms.TextBox();
+            this.textBoxAddReservationCityB = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -139,14 +139,14 @@
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
-            this.groupBox5.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox10.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -191,7 +191,7 @@
             // 
             // buttonShowCourseVisits
             // 
-            this.buttonShowCourseVisits.Location = new System.Drawing.Point(202, 67);
+            this.buttonShowCourseVisits.Location = new System.Drawing.Point(158, 68);
             this.buttonShowCourseVisits.Name = "buttonShowCourseVisits";
             this.buttonShowCourseVisits.Size = new System.Drawing.Size(75, 23);
             this.buttonShowCourseVisits.TabIndex = 5;
@@ -231,7 +231,7 @@
             // 
             // buttonSearchAtoB
             // 
-            this.buttonSearchAtoB.Location = new System.Drawing.Point(385, 78);
+            this.buttonSearchAtoB.Location = new System.Drawing.Point(296, 75);
             this.buttonSearchAtoB.Name = "buttonSearchAtoB";
             this.buttonSearchAtoB.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchAtoB.TabIndex = 3;
@@ -241,7 +241,7 @@
             // 
             // textBoxCityB
             // 
-            this.textBoxCityB.Location = new System.Drawing.Point(202, 78);
+            this.textBoxCityB.Location = new System.Drawing.Point(158, 78);
             this.textBoxCityB.Name = "textBoxCityB";
             this.textBoxCityB.Size = new System.Drawing.Size(100, 20);
             this.textBoxCityB.TabIndex = 4;
@@ -249,20 +249,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(199, 52);
+            this.label2.Location = new System.Drawing.Point(155, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 13);
+            this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Miejsce docelowe:";
+            this.label2.Text = "Stacja docelowa:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Miejsce początkowe:";
+            this.label1.Text = "Stacja początkowa:";
             // 
             // textBoxCityA
             // 
@@ -596,9 +596,9 @@
             // 
             // buttonAddNewCustomer
             // 
-            this.buttonAddNewCustomer.Location = new System.Drawing.Point(604, 66);
+            this.buttonAddNewCustomer.Location = new System.Drawing.Point(604, 64);
             this.buttonAddNewCustomer.Name = "buttonAddNewCustomer";
-            this.buttonAddNewCustomer.Size = new System.Drawing.Size(92, 20);
+            this.buttonAddNewCustomer.Size = new System.Drawing.Size(92, 24);
             this.buttonAddNewCustomer.TabIndex = 2;
             this.buttonAddNewCustomer.Text = "Dodaj";
             this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
@@ -624,7 +624,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCustomers.Location = new System.Drawing.Point(6, 6);
+            this.dataGridViewCustomers.Location = new System.Drawing.Point(9, 0);
             this.dataGridViewCustomers.Name = "dataGridViewCustomers";
             this.dataGridViewCustomers.Size = new System.Drawing.Size(702, 385);
             this.dataGridViewCustomers.TabIndex = 0;
@@ -676,362 +676,24 @@
             this.tabPage5.Text = "Dodaj";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(113, 36);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(16, 13);
-            this.label24.TabIndex = 4;
-            this.label24.Text = "->";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(132, 17);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(51, 13);
-            this.label23.TabIndex = 3;
-            this.label23.Text = "Miasto B:";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(5, 17);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(51, 13);
-            this.label22.TabIndex = 2;
-            this.label22.Text = "Miasto A:";
-            // 
-            // textBoxAddReservationCityB
-            // 
-            this.textBoxAddReservationCityB.Location = new System.Drawing.Point(135, 33);
-            this.textBoxAddReservationCityB.Name = "textBoxAddReservationCityB";
-            this.textBoxAddReservationCityB.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationCityB.TabIndex = 1;
-            // 
-            // textBoxAddReservationCityA
-            // 
-            this.textBoxAddReservationCityA.Location = new System.Drawing.Point(8, 33);
-            this.textBoxAddReservationCityA.Name = "textBoxAddReservationCityA";
-            this.textBoxAddReservationCityA.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationCityA.TabIndex = 0;
-            // 
-            // dataGridViewReservations
-            // 
-            this.dataGridViewReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewReservations.Location = new System.Drawing.Point(3, 3);
-            this.dataGridViewReservations.Name = "dataGridViewReservations";
-            this.dataGridViewReservations.Size = new System.Drawing.Size(708, 348);
-            this.dataGridViewReservations.TabIndex = 1;
-            // 
-            // buttonAdReservationSearchCoursesAB
-            // 
-            this.buttonAdReservationSearchCoursesAB.Location = new System.Drawing.Point(253, 33);
-            this.buttonAdReservationSearchCoursesAB.Name = "buttonAdReservationSearchCoursesAB";
-            this.buttonAdReservationSearchCoursesAB.Size = new System.Drawing.Size(75, 22);
-            this.buttonAdReservationSearchCoursesAB.TabIndex = 5;
-            this.buttonAdReservationSearchCoursesAB.Text = "Szukaj";
-            this.buttonAdReservationSearchCoursesAB.UseVisualStyleBackColor = true;
-            this.buttonAdReservationSearchCoursesAB.Click += new System.EventHandler(this.buttonAdReservationSearchCoursesAB_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.buttonAdReservationSearchCoursesAB);
-            this.groupBox5.Controls.Add(this.textBoxAddReservationCityA);
-            this.groupBox5.Controls.Add(this.textBoxAddReservationCityB);
-            this.groupBox5.Controls.Add(this.label22);
-            this.groupBox5.Controls.Add(this.label23);
-            this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Location = new System.Drawing.Point(6, 6);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(334, 70);
-            this.groupBox5.TabIndex = 6;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "1. Wyświetl kursy dla trasy";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.buttonAddReservationSaveCourseID);
-            this.groupBox6.Location = new System.Drawing.Point(346, 6);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(170, 70);
-            this.groupBox6.TabIndex = 0;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "2. Wybierz kurs";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.radioButtonRegularTicket);
-            this.groupBox7.Controls.Add(this.radioButtonReducedTicket);
-            this.groupBox7.Location = new System.Drawing.Point(522, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(170, 70);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "3. Wybierz rodzaj biletu";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.groupBox9);
-            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerPhoneNumber);
-            this.groupBox8.Controls.Add(this.label26);
-            this.groupBox8.Controls.Add(this.label27);
-            this.groupBox8.Controls.Add(this.label28);
-            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerEmail);
-            this.groupBox8.Controls.Add(this.label29);
-            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerSurname);
-            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerName);
-            this.groupBox8.Location = new System.Drawing.Point(6, 77);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(686, 85);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "4.1 Podaj dane istniejącego użytkownika";
-            // 
-            // buttonAddReservationSaveCourseID
-            // 
-            this.buttonAddReservationSaveCourseID.Location = new System.Drawing.Point(17, 21);
-            this.buttonAddReservationSaveCourseID.Name = "buttonAddReservationSaveCourseID";
-            this.buttonAddReservationSaveCourseID.Size = new System.Drawing.Size(137, 37);
-            this.buttonAddReservationSaveCourseID.TabIndex = 6;
-            this.buttonAddReservationSaveCourseID.Text = "Zatwierdź zaznaczony kurs";
-            this.buttonAddReservationSaveCourseID.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonReducedTicket
-            // 
-            this.radioButtonReducedTicket.AutoSize = true;
-            this.radioButtonReducedTicket.Location = new System.Drawing.Point(18, 31);
-            this.radioButtonReducedTicket.Name = "radioButtonReducedTicket";
-            this.radioButtonReducedTicket.Size = new System.Drawing.Size(58, 17);
-            this.radioButtonReducedTicket.TabIndex = 7;
-            this.radioButtonReducedTicket.TabStop = true;
-            this.radioButtonReducedTicket.Text = "ulgowy";
-            this.radioButtonReducedTicket.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonRegularTicket
-            // 
-            this.radioButtonRegularTicket.AutoSize = true;
-            this.radioButtonRegularTicket.Location = new System.Drawing.Point(93, 32);
-            this.radioButtonRegularTicket.Name = "radioButtonRegularTicket";
-            this.radioButtonRegularTicket.Size = new System.Drawing.Size(67, 17);
-            this.radioButtonRegularTicket.TabIndex = 8;
-            this.radioButtonRegularTicket.TabStop = true;
-            this.radioButtonRegularTicket.Text = "normalny";
-            this.radioButtonRegularTicket.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAddReservationSearchCustomerPhoneNumber
-            // 
-            this.textBoxAddReservationSearchCustomerPhoneNumber.Location = new System.Drawing.Point(308, 49);
-            this.textBoxAddReservationSearchCustomerPhoneNumber.Name = "textBoxAddReservationSearchCustomerPhoneNumber";
-            this.textBoxAddReservationSearchCustomerPhoneNumber.Size = new System.Drawing.Size(90, 20);
-            this.textBoxAddReservationSearchCustomerPhoneNumber.TabIndex = 24;
-            this.textBoxAddReservationSearchCustomerPhoneNumber.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(305, 33);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(65, 13);
-            this.label26.TabIndex = 22;
-            this.label26.Text = "Nr. telefonu:";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(209, 33);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(35, 13);
-            this.label27.TabIndex = 25;
-            this.label27.Text = "Email:";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(113, 33);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(56, 13);
-            this.label28.TabIndex = 21;
-            this.label28.Text = "Nazwisko:";
-            this.label28.Click += new System.EventHandler(this.label28_Click);
-            // 
-            // textBoxAddReservationSearchCustomerEmail
-            // 
-            this.textBoxAddReservationSearchCustomerEmail.Location = new System.Drawing.Point(212, 49);
-            this.textBoxAddReservationSearchCustomerEmail.Name = "textBoxAddReservationSearchCustomerEmail";
-            this.textBoxAddReservationSearchCustomerEmail.Size = new System.Drawing.Size(90, 20);
-            this.textBoxAddReservationSearchCustomerEmail.TabIndex = 23;
-            this.textBoxAddReservationSearchCustomerEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(13, 33);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(29, 13);
-            this.label29.TabIndex = 20;
-            this.label29.Text = "Imię:";
-            this.label29.Click += new System.EventHandler(this.label29_Click);
-            // 
-            // textBoxAddReservationSearchCustomerSurname
-            // 
-            this.textBoxAddReservationSearchCustomerSurname.Location = new System.Drawing.Point(116, 49);
-            this.textBoxAddReservationSearchCustomerSurname.Name = "textBoxAddReservationSearchCustomerSurname";
-            this.textBoxAddReservationSearchCustomerSurname.Size = new System.Drawing.Size(90, 20);
-            this.textBoxAddReservationSearchCustomerSurname.TabIndex = 18;
-            this.textBoxAddReservationSearchCustomerSurname.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // textBoxAddReservationSearchCustomerName
-            // 
-            this.textBoxAddReservationSearchCustomerName.Location = new System.Drawing.Point(16, 49);
-            this.textBoxAddReservationSearchCustomerName.Name = "textBoxAddReservationSearchCustomerName";
-            this.textBoxAddReservationSearchCustomerName.Size = new System.Drawing.Size(90, 20);
-            this.textBoxAddReservationSearchCustomerName.TabIndex = 19;
-            this.textBoxAddReservationSearchCustomerName.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.buttonAddReservationSaveSelectedCustomer);
-            this.groupBox9.Location = new System.Drawing.Point(434, 9);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(228, 70);
-            this.groupBox9.TabIndex = 7;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Zatwierdź użytkownika";
-            // 
-            // buttonAddReservationSaveSelectedCustomer
-            // 
-            this.buttonAddReservationSaveSelectedCustomer.Location = new System.Drawing.Point(42, 19);
-            this.buttonAddReservationSaveSelectedCustomer.Name = "buttonAddReservationSaveSelectedCustomer";
-            this.buttonAddReservationSaveSelectedCustomer.Size = new System.Drawing.Size(163, 45);
-            this.buttonAddReservationSaveSelectedCustomer.TabIndex = 8;
-            this.buttonAddReservationSaveSelectedCustomer.Text = "Zatwierdź zaznaczonego użytkownika";
-            this.buttonAddReservationSaveSelectedCustomer.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAddReservationNewCustomerName
-            // 
-            this.textBoxAddReservationNewCustomerName.Location = new System.Drawing.Point(6, 30);
-            this.textBoxAddReservationNewCustomerName.Name = "textBoxAddReservationNewCustomerName";
-            this.textBoxAddReservationNewCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerName.TabIndex = 3;
-            // 
-            // textBoxAddReservationNewCustomerSurname
-            // 
-            this.textBoxAddReservationNewCustomerSurname.Location = new System.Drawing.Point(6, 66);
-            this.textBoxAddReservationNewCustomerSurname.Name = "textBoxAddReservationNewCustomerSurname";
-            this.textBoxAddReservationNewCustomerSurname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerSurname.TabIndex = 2;
-            // 
-            // buttonAddReservationAddNewCustomer
-            // 
-            this.buttonAddReservationAddNewCustomer.Location = new System.Drawing.Point(434, 39);
-            this.buttonAddReservationAddNewCustomer.Name = "buttonAddReservationAddNewCustomer";
-            this.buttonAddReservationAddNewCustomer.Size = new System.Drawing.Size(86, 41);
-            this.buttonAddReservationAddNewCustomer.TabIndex = 2;
-            this.buttonAddReservationAddNewCustomer.Text = "Dodaj oraz zapisz";
-            this.buttonAddReservationAddNewCustomer.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAddReservationNewCustomerAddress1
-            // 
-            this.textBoxAddReservationNewCustomerAddress1.Location = new System.Drawing.Point(116, 30);
-            this.textBoxAddReservationNewCustomerAddress1.Name = "textBoxAddReservationNewCustomerAddress1";
-            this.textBoxAddReservationNewCustomerAddress1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerAddress1.TabIndex = 13;
-            // 
-            // textBoxAddReservationNewCustomerCity
-            // 
-            this.textBoxAddReservationNewCustomerCity.Location = new System.Drawing.Point(116, 66);
-            this.textBoxAddReservationNewCustomerCity.Name = "textBoxAddReservationNewCustomerCity";
-            this.textBoxAddReservationNewCustomerCity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerCity.TabIndex = 12;
-            // 
-            // textBoxAddReservationNewCustomerZipCode
-            // 
-            this.textBoxAddReservationNewCustomerZipCode.Location = new System.Drawing.Point(222, 30);
-            this.textBoxAddReservationNewCustomerZipCode.Name = "textBoxAddReservationNewCustomerZipCode";
-            this.textBoxAddReservationNewCustomerZipCode.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerZipCode.TabIndex = 15;
-            // 
-            // textBoxAddReservationNewCustomerPhoneNumber
-            // 
-            this.textBoxAddReservationNewCustomerPhoneNumber.Location = new System.Drawing.Point(222, 66);
-            this.textBoxAddReservationNewCustomerPhoneNumber.Name = "textBoxAddReservationNewCustomerPhoneNumber";
-            this.textBoxAddReservationNewCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerPhoneNumber.TabIndex = 14;
-            // 
-            // textBoxAddReservationNewCustomerEmail
-            // 
-            this.textBoxAddReservationNewCustomerEmail.Location = new System.Drawing.Point(328, 47);
-            this.textBoxAddReservationNewCustomerEmail.Name = "textBoxAddReservationNewCustomerEmail";
-            this.textBoxAddReservationNewCustomerEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAddReservationNewCustomerEmail.TabIndex = 16;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(6, 14);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(29, 13);
-            this.label35.TabIndex = 17;
-            this.label35.Text = "Imię:";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 50);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(56, 13);
-            this.label34.TabIndex = 18;
-            this.label34.Text = "Nazwisko:";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(113, 14);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(67, 13);
-            this.label33.TabIndex = 19;
-            this.label33.Text = "ul./nr. domu:";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(113, 53);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(71, 13);
-            this.label32.TabIndex = 20;
-            this.label32.Text = "Miejscowość:";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(219, 14);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(77, 13);
-            this.label31.TabIndex = 21;
-            this.label31.Text = "Kod pocztowy:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(219, 53);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 22;
-            this.label30.Text = "Nr. tel.:";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(325, 33);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(35, 13);
-            this.label25.TabIndex = 23;
-            this.label25.Text = "Email:";
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.buttonAddReservation);
+            this.groupBox11.Location = new System.Drawing.Point(6, 273);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(686, 60);
+            this.groupBox11.TabIndex = 8;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "5.Dokonaj rezerwacji";
+            // 
+            // buttonAddReservation
+            // 
+            this.buttonAddReservation.Location = new System.Drawing.Point(265, 19);
+            this.buttonAddReservation.Name = "buttonAddReservation";
+            this.buttonAddReservation.Size = new System.Drawing.Size(119, 30);
+            this.buttonAddReservation.TabIndex = 9;
+            this.buttonAddReservation.Text = "Zarezerwuj";
+            this.buttonAddReservation.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
@@ -1060,24 +722,353 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "4.2 Dodaj nowego klienta";
             // 
-            // groupBox11
+            // label25
             // 
-            this.groupBox11.Controls.Add(this.buttonAddReservation);
-            this.groupBox11.Location = new System.Drawing.Point(6, 273);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(686, 60);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "5.Dokonaj rezerwacji";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(325, 33);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(35, 13);
+            this.label25.TabIndex = 23;
+            this.label25.Text = "Email:";
             // 
-            // buttonAddReservation
+            // label30
             // 
-            this.buttonAddReservation.Location = new System.Drawing.Point(265, 19);
-            this.buttonAddReservation.Name = "buttonAddReservation";
-            this.buttonAddReservation.Size = new System.Drawing.Size(119, 30);
-            this.buttonAddReservation.TabIndex = 9;
-            this.buttonAddReservation.Text = "Zarezerwuj";
-            this.buttonAddReservation.UseVisualStyleBackColor = true;
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(219, 53);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(41, 13);
+            this.label30.TabIndex = 22;
+            this.label30.Text = "Nr. tel.:";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(219, 14);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(77, 13);
+            this.label31.TabIndex = 21;
+            this.label31.Text = "Kod pocztowy:";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(113, 53);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(71, 13);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Miejscowość:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(113, 14);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(67, 13);
+            this.label33.TabIndex = 19;
+            this.label33.Text = "ul./nr. domu:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(6, 50);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(56, 13);
+            this.label34.TabIndex = 18;
+            this.label34.Text = "Nazwisko:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(6, 14);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(29, 13);
+            this.label35.TabIndex = 17;
+            this.label35.Text = "Imię:";
+            // 
+            // textBoxAddReservationNewCustomerEmail
+            // 
+            this.textBoxAddReservationNewCustomerEmail.Location = new System.Drawing.Point(328, 47);
+            this.textBoxAddReservationNewCustomerEmail.Name = "textBoxAddReservationNewCustomerEmail";
+            this.textBoxAddReservationNewCustomerEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerEmail.TabIndex = 16;
+            // 
+            // textBoxAddReservationNewCustomerPhoneNumber
+            // 
+            this.textBoxAddReservationNewCustomerPhoneNumber.Location = new System.Drawing.Point(222, 66);
+            this.textBoxAddReservationNewCustomerPhoneNumber.Name = "textBoxAddReservationNewCustomerPhoneNumber";
+            this.textBoxAddReservationNewCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerPhoneNumber.TabIndex = 14;
+            // 
+            // textBoxAddReservationNewCustomerZipCode
+            // 
+            this.textBoxAddReservationNewCustomerZipCode.Location = new System.Drawing.Point(222, 30);
+            this.textBoxAddReservationNewCustomerZipCode.Name = "textBoxAddReservationNewCustomerZipCode";
+            this.textBoxAddReservationNewCustomerZipCode.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerZipCode.TabIndex = 15;
+            // 
+            // textBoxAddReservationNewCustomerCity
+            // 
+            this.textBoxAddReservationNewCustomerCity.Location = new System.Drawing.Point(116, 66);
+            this.textBoxAddReservationNewCustomerCity.Name = "textBoxAddReservationNewCustomerCity";
+            this.textBoxAddReservationNewCustomerCity.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerCity.TabIndex = 12;
+            // 
+            // textBoxAddReservationNewCustomerAddress1
+            // 
+            this.textBoxAddReservationNewCustomerAddress1.Location = new System.Drawing.Point(116, 30);
+            this.textBoxAddReservationNewCustomerAddress1.Name = "textBoxAddReservationNewCustomerAddress1";
+            this.textBoxAddReservationNewCustomerAddress1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerAddress1.TabIndex = 13;
+            // 
+            // buttonAddReservationAddNewCustomer
+            // 
+            this.buttonAddReservationAddNewCustomer.Location = new System.Drawing.Point(434, 39);
+            this.buttonAddReservationAddNewCustomer.Name = "buttonAddReservationAddNewCustomer";
+            this.buttonAddReservationAddNewCustomer.Size = new System.Drawing.Size(86, 41);
+            this.buttonAddReservationAddNewCustomer.TabIndex = 2;
+            this.buttonAddReservationAddNewCustomer.Text = "Dodaj oraz zapisz";
+            this.buttonAddReservationAddNewCustomer.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAddReservationNewCustomerSurname
+            // 
+            this.textBoxAddReservationNewCustomerSurname.Location = new System.Drawing.Point(6, 66);
+            this.textBoxAddReservationNewCustomerSurname.Name = "textBoxAddReservationNewCustomerSurname";
+            this.textBoxAddReservationNewCustomerSurname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerSurname.TabIndex = 2;
+            // 
+            // textBoxAddReservationNewCustomerName
+            // 
+            this.textBoxAddReservationNewCustomerName.Location = new System.Drawing.Point(6, 30);
+            this.textBoxAddReservationNewCustomerName.Name = "textBoxAddReservationNewCustomerName";
+            this.textBoxAddReservationNewCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationNewCustomerName.TabIndex = 3;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.buttonAddReservationSaveCourseID);
+            this.groupBox6.Location = new System.Drawing.Point(346, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(170, 70);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "2. Wybierz kurs";
+            // 
+            // buttonAddReservationSaveCourseID
+            // 
+            this.buttonAddReservationSaveCourseID.Location = new System.Drawing.Point(17, 21);
+            this.buttonAddReservationSaveCourseID.Name = "buttonAddReservationSaveCourseID";
+            this.buttonAddReservationSaveCourseID.Size = new System.Drawing.Size(137, 37);
+            this.buttonAddReservationSaveCourseID.TabIndex = 6;
+            this.buttonAddReservationSaveCourseID.Text = "Zatwierdź zaznaczony kurs";
+            this.buttonAddReservationSaveCourseID.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.radioButtonRegularTicket);
+            this.groupBox7.Controls.Add(this.radioButtonReducedTicket);
+            this.groupBox7.Location = new System.Drawing.Point(522, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(170, 70);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "3. Wybierz rodzaj biletu";
+            // 
+            // radioButtonRegularTicket
+            // 
+            this.radioButtonRegularTicket.AutoSize = true;
+            this.radioButtonRegularTicket.Location = new System.Drawing.Point(93, 32);
+            this.radioButtonRegularTicket.Name = "radioButtonRegularTicket";
+            this.radioButtonRegularTicket.Size = new System.Drawing.Size(67, 17);
+            this.radioButtonRegularTicket.TabIndex = 8;
+            this.radioButtonRegularTicket.TabStop = true;
+            this.radioButtonRegularTicket.Text = "normalny";
+            this.radioButtonRegularTicket.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonReducedTicket
+            // 
+            this.radioButtonReducedTicket.AutoSize = true;
+            this.radioButtonReducedTicket.Location = new System.Drawing.Point(18, 31);
+            this.radioButtonReducedTicket.Name = "radioButtonReducedTicket";
+            this.radioButtonReducedTicket.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonReducedTicket.TabIndex = 7;
+            this.radioButtonReducedTicket.TabStop = true;
+            this.radioButtonReducedTicket.Text = "ulgowy";
+            this.radioButtonReducedTicket.UseVisualStyleBackColor = true;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.groupBox9);
+            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerPhoneNumber);
+            this.groupBox8.Controls.Add(this.label26);
+            this.groupBox8.Controls.Add(this.label27);
+            this.groupBox8.Controls.Add(this.label28);
+            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerEmail);
+            this.groupBox8.Controls.Add(this.label29);
+            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerSurname);
+            this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerName);
+            this.groupBox8.Location = new System.Drawing.Point(6, 77);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(686, 85);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "4.1 Podaj dane istniejącego użytkownika";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.buttonAddReservationSaveSelectedCustomer);
+            this.groupBox9.Location = new System.Drawing.Point(434, 9);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(228, 70);
+            this.groupBox9.TabIndex = 7;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Zatwierdź użytkownika";
+            // 
+            // buttonAddReservationSaveSelectedCustomer
+            // 
+            this.buttonAddReservationSaveSelectedCustomer.Location = new System.Drawing.Point(42, 19);
+            this.buttonAddReservationSaveSelectedCustomer.Name = "buttonAddReservationSaveSelectedCustomer";
+            this.buttonAddReservationSaveSelectedCustomer.Size = new System.Drawing.Size(163, 45);
+            this.buttonAddReservationSaveSelectedCustomer.TabIndex = 8;
+            this.buttonAddReservationSaveSelectedCustomer.Text = "Zatwierdź zaznaczonego użytkownika";
+            this.buttonAddReservationSaveSelectedCustomer.UseVisualStyleBackColor = true;
+            // 
+            // textBoxAddReservationSearchCustomerPhoneNumber
+            // 
+            this.textBoxAddReservationSearchCustomerPhoneNumber.Location = new System.Drawing.Point(308, 49);
+            this.textBoxAddReservationSearchCustomerPhoneNumber.Name = "textBoxAddReservationSearchCustomerPhoneNumber";
+            this.textBoxAddReservationSearchCustomerPhoneNumber.Size = new System.Drawing.Size(90, 20);
+            this.textBoxAddReservationSearchCustomerPhoneNumber.TabIndex = 24;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(305, 33);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(65, 13);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Nr. telefonu:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(209, 33);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(35, 13);
+            this.label27.TabIndex = 25;
+            this.label27.Text = "Email:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(113, 33);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(56, 13);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Nazwisko:";
+            // 
+            // textBoxAddReservationSearchCustomerEmail
+            // 
+            this.textBoxAddReservationSearchCustomerEmail.Location = new System.Drawing.Point(212, 49);
+            this.textBoxAddReservationSearchCustomerEmail.Name = "textBoxAddReservationSearchCustomerEmail";
+            this.textBoxAddReservationSearchCustomerEmail.Size = new System.Drawing.Size(90, 20);
+            this.textBoxAddReservationSearchCustomerEmail.TabIndex = 23;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(13, 33);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(29, 13);
+            this.label29.TabIndex = 20;
+            this.label29.Text = "Imię:";
+            // 
+            // textBoxAddReservationSearchCustomerSurname
+            // 
+            this.textBoxAddReservationSearchCustomerSurname.Location = new System.Drawing.Point(116, 49);
+            this.textBoxAddReservationSearchCustomerSurname.Name = "textBoxAddReservationSearchCustomerSurname";
+            this.textBoxAddReservationSearchCustomerSurname.Size = new System.Drawing.Size(90, 20);
+            this.textBoxAddReservationSearchCustomerSurname.TabIndex = 18;
+            // 
+            // textBoxAddReservationSearchCustomerName
+            // 
+            this.textBoxAddReservationSearchCustomerName.Location = new System.Drawing.Point(16, 49);
+            this.textBoxAddReservationSearchCustomerName.Name = "textBoxAddReservationSearchCustomerName";
+            this.textBoxAddReservationSearchCustomerName.Size = new System.Drawing.Size(90, 20);
+            this.textBoxAddReservationSearchCustomerName.TabIndex = 19;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.buttonAdReservationSearchCoursesAB);
+            this.groupBox5.Controls.Add(this.textBoxAddReservationCityA);
+            this.groupBox5.Controls.Add(this.textBoxAddReservationCityB);
+            this.groupBox5.Controls.Add(this.label22);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Controls.Add(this.label24);
+            this.groupBox5.Location = new System.Drawing.Point(6, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(334, 70);
+            this.groupBox5.TabIndex = 6;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "1. Wyświetl kursy dla trasy";
+            // 
+            // buttonAdReservationSearchCoursesAB
+            // 
+            this.buttonAdReservationSearchCoursesAB.Location = new System.Drawing.Point(253, 33);
+            this.buttonAdReservationSearchCoursesAB.Name = "buttonAdReservationSearchCoursesAB";
+            this.buttonAdReservationSearchCoursesAB.Size = new System.Drawing.Size(75, 22);
+            this.buttonAdReservationSearchCoursesAB.TabIndex = 5;
+            this.buttonAdReservationSearchCoursesAB.Text = "Szukaj";
+            this.buttonAdReservationSearchCoursesAB.UseVisualStyleBackColor = true;
+            this.buttonAdReservationSearchCoursesAB.Click += new System.EventHandler(this.buttonAdReservationSearchCoursesAB_Click);
+            // 
+            // textBoxAddReservationCityA
+            // 
+            this.textBoxAddReservationCityA.Location = new System.Drawing.Point(8, 33);
+            this.textBoxAddReservationCityA.Name = "textBoxAddReservationCityA";
+            this.textBoxAddReservationCityA.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationCityA.TabIndex = 0;
+            // 
+            // textBoxAddReservationCityB
+            // 
+            this.textBoxAddReservationCityB.Location = new System.Drawing.Point(135, 33);
+            this.textBoxAddReservationCityB.Name = "textBoxAddReservationCityB";
+            this.textBoxAddReservationCityB.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddReservationCityB.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(5, 17);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 13);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Miasto A:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(132, 17);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(51, 13);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Miasto B:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(113, 36);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(16, 13);
+            this.label24.TabIndex = 4;
+            this.label24.Text = "->";
+            // 
+            // dataGridViewReservations
+            // 
+            this.dataGridViewReservations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewReservations.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewReservations.Name = "dataGridViewReservations";
+            this.dataGridViewReservations.Size = new System.Drawing.Size(708, 348);
+            this.dataGridViewReservations.TabIndex = 1;
             // 
             // CashierForm
             // 
@@ -1106,18 +1097,18 @@
             this.tabPage3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).EndInit();
             this.ResumeLayout(false);
 
         }
