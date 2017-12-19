@@ -25,7 +25,7 @@ namespace RailwayManagementSystem
         {
             InitializeComponent();
             this.CenterToScreen();
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
