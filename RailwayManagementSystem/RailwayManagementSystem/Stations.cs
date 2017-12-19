@@ -32,5 +32,22 @@ namespace RailwayManagementSystem
                 return null;
             }
         }
+
+        public static void AddStation(SqlConnection sqlConnection, string name)
+        {
+            try
+            {
+                sqlConnection.Open();
+                string command = $"EXEC ADD_STATION " +
+                                 $"'{name}'";
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+            }
+            catch
+            {
+                Debug.WriteLine("Błąd zapytania do bazy danych!");
+            }
+        }
     }
 }
