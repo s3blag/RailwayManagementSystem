@@ -41,6 +41,7 @@ namespace RailwayManagementSystem
             textBoxSearchBySurname.TextChanged += textBoxSearch_TextChanged;
             textBoxSearchByEmail.TextChanged += textBoxSearch_TextChanged;
             textBoxSearchByPhoneNumber.TextChanged += textBoxSearch_TextChanged;
+
         }
 
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
@@ -116,5 +117,61 @@ namespace RailwayManagementSystem
             dataTable.DefaultView.RowFilter = rowFilter;
         }
 
+        private void buttonAdReservationSearchCoursesAB_Click(object sender, EventArgs e)
+        {
+            string cityA = textBoxAddReservationCityA.Text;
+            string cityB = textBoxAddReservationCityB.Text;
+
+            using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
+            {
+                if (dataTable != null)
+                    dataGridViewReservations.DataSource = dataTable;
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
