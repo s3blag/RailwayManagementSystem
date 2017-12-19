@@ -129,5 +129,31 @@ namespace RailwayManagementSystem
         {
             dataGridViewCourses.DataSource = courses;
         }
+
+        private void buttonAddStation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Stations.AddStation(sqlConnection, textBoxStationName.Text);
+                dataGridViewCourses.DataSource = Stations.GetAllStations(sqlConnection);                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
+
+        private void buttonAddTrain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Trains.AddTrain(sqlConnection, textBoxTrainName.Text, textBoxTrainModel.Text);
+                dataGridViewCourses.DataSource = Trains.GetAllTrains(sqlConnection);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }
     }
 }
