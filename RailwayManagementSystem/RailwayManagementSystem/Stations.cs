@@ -33,7 +33,7 @@ namespace RailwayManagementSystem
             }
         }
 
-        public static void AddStation(SqlConnection sqlConnection, string name)
+        public static bool AddStation(SqlConnection sqlConnection, string name)
         {
             try
             {
@@ -43,10 +43,12 @@ namespace RailwayManagementSystem
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                return true;
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
+                return false;
             }
         }
     }

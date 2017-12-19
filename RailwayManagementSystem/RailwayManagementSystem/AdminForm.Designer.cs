@@ -60,14 +60,16 @@
             this.comboBoxTrains = new System.Windows.Forms.ComboBox();
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.tabPageOthers = new System.Windows.Forms.TabPage();
+            this.groupBoxTrains = new System.Windows.Forms.GroupBox();
+            this.buttonAddTrain = new System.Windows.Forms.Button();
+            this.textBoxTrainModel = new System.Windows.Forms.TextBox();
+            this.textBoxTrainName = new System.Windows.Forms.TextBox();
             this.groupBoxStations = new System.Windows.Forms.GroupBox();
             this.buttonAddStation = new System.Windows.Forms.Button();
             this.textBoxStationName = new System.Windows.Forms.TextBox();
             this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
-            this.groupBoxTrains = new System.Windows.Forms.GroupBox();
-            this.textBoxTrainName = new System.Windows.Forms.TextBox();
-            this.textBoxTrainModel = new System.Windows.Forms.TextBox();
-            this.buttonAddTrain = new System.Windows.Forms.Button();
+            this.buttonDisplayAllStations = new System.Windows.Forms.Button();
+            this.buttonDisplayAllTrains = new System.Windows.Forms.Button();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageCourses.SuspendLayout();
             this.tabControlCourses.SuspendLayout();
@@ -81,9 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).BeginInit();
             this.groupBoxAddCourse.SuspendLayout();
             this.tabPageOthers.SuspendLayout();
+            this.groupBoxTrains.SuspendLayout();
             this.groupBoxStations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
-            this.groupBoxTrains.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -151,6 +153,7 @@
             this.buttonDeleteCourse.TabIndex = 0;
             this.buttonDeleteCourse.Text = "Usuń zaznaczony";
             this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            this.buttonDeleteCourse.Click += new System.EventHandler(this.buttonDeleteCourse_Click);
             // 
             // groupBox2
             // 
@@ -166,7 +169,7 @@
             // 
             // buttonShowCourseVisits
             // 
-            this.buttonShowCourseVisits.Location = new System.Drawing.Point(202, 67);
+            this.buttonShowCourseVisits.Location = new System.Drawing.Point(194, 68);
             this.buttonShowCourseVisits.Name = "buttonShowCourseVisits";
             this.buttonShowCourseVisits.Size = new System.Drawing.Size(75, 23);
             this.buttonShowCourseVisits.TabIndex = 5;
@@ -207,7 +210,7 @@
             // 
             // buttonSelectAllCourses
             // 
-            this.buttonSelectAllCourses.Location = new System.Drawing.Point(539, 78);
+            this.buttonSelectAllCourses.Location = new System.Drawing.Point(519, 75);
             this.buttonSelectAllCourses.Name = "buttonSelectAllCourses";
             this.buttonSelectAllCourses.Size = new System.Drawing.Size(122, 23);
             this.buttonSelectAllCourses.TabIndex = 5;
@@ -217,7 +220,7 @@
             // 
             // buttonSearchAtoB
             // 
-            this.buttonSearchAtoB.Location = new System.Drawing.Point(385, 78);
+            this.buttonSearchAtoB.Location = new System.Drawing.Point(386, 75);
             this.buttonSearchAtoB.Name = "buttonSearchAtoB";
             this.buttonSearchAtoB.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchAtoB.TabIndex = 3;
@@ -227,7 +230,7 @@
             // 
             // textBoxCityB
             // 
-            this.textBoxCityB.Location = new System.Drawing.Point(202, 78);
+            this.textBoxCityB.Location = new System.Drawing.Point(194, 77);
             this.textBoxCityB.Name = "textBoxCityB";
             this.textBoxCityB.Size = new System.Drawing.Size(100, 20);
             this.textBoxCityB.TabIndex = 4;
@@ -290,7 +293,7 @@
             // comboBoxStations
             // 
             this.comboBoxStations.FormattingEnabled = true;
-            this.comboBoxStations.Location = new System.Drawing.Point(144, 36);
+            this.comboBoxStations.Location = new System.Drawing.Point(144, 35);
             this.comboBoxStations.Name = "comboBoxStations";
             this.comboBoxStations.Size = new System.Drawing.Size(121, 21);
             this.comboBoxStations.TabIndex = 7;
@@ -356,7 +359,7 @@
             // 
             // buttonAddVisit
             // 
-            this.buttonAddVisit.Location = new System.Drawing.Point(395, 34);
+            this.buttonAddVisit.Location = new System.Drawing.Point(395, 33);
             this.buttonAddVisit.Name = "buttonAddVisit";
             this.buttonAddVisit.Size = new System.Drawing.Size(100, 23);
             this.buttonAddVisit.TabIndex = 1;
@@ -416,20 +419,60 @@
             this.tabPageOthers.Text = "Inne";
             this.tabPageOthers.UseVisualStyleBackColor = true;
             // 
+            // groupBoxTrains
+            // 
+            this.groupBoxTrains.Controls.Add(this.buttonDisplayAllTrains);
+            this.groupBoxTrains.Controls.Add(this.buttonAddTrain);
+            this.groupBoxTrains.Controls.Add(this.textBoxTrainModel);
+            this.groupBoxTrains.Controls.Add(this.textBoxTrainName);
+            this.groupBoxTrains.Location = new System.Drawing.Point(6, 88);
+            this.groupBoxTrains.Name = "groupBoxTrains";
+            this.groupBoxTrains.Size = new System.Drawing.Size(882, 83);
+            this.groupBoxTrains.TabIndex = 3;
+            this.groupBoxTrains.TabStop = false;
+            this.groupBoxTrains.Text = "Zarządzanie pociągami";
+            // 
+            // buttonAddTrain
+            // 
+            this.buttonAddTrain.Location = new System.Drawing.Point(234, 33);
+            this.buttonAddTrain.Name = "buttonAddTrain";
+            this.buttonAddTrain.Size = new System.Drawing.Size(86, 23);
+            this.buttonAddTrain.TabIndex = 2;
+            this.buttonAddTrain.Text = "Dodaj pociąg";
+            this.buttonAddTrain.UseVisualStyleBackColor = true;
+            this.buttonAddTrain.Click += new System.EventHandler(this.buttonAddTrain_Click);
+            // 
+            // textBoxTrainModel
+            // 
+            this.textBoxTrainModel.Location = new System.Drawing.Point(115, 35);
+            this.textBoxTrainModel.Name = "textBoxTrainModel";
+            this.textBoxTrainModel.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTrainModel.TabIndex = 1;
+            this.textBoxTrainModel.Text = "Model";
+            // 
+            // textBoxTrainName
+            // 
+            this.textBoxTrainName.Location = new System.Drawing.Point(7, 35);
+            this.textBoxTrainName.Name = "textBoxTrainName";
+            this.textBoxTrainName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTrainName.TabIndex = 0;
+            this.textBoxTrainName.Text = "Nazwa pociągu";
+            // 
             // groupBoxStations
             // 
+            this.groupBoxStations.Controls.Add(this.buttonDisplayAllStations);
             this.groupBoxStations.Controls.Add(this.buttonAddStation);
             this.groupBoxStations.Controls.Add(this.textBoxStationName);
-            this.groupBoxStations.Location = new System.Drawing.Point(13, 6);
+            this.groupBoxStations.Location = new System.Drawing.Point(6, 6);
             this.groupBoxStations.Name = "groupBoxStations";
-            this.groupBoxStations.Size = new System.Drawing.Size(875, 115);
+            this.groupBoxStations.Size = new System.Drawing.Size(882, 76);
             this.groupBoxStations.TabIndex = 2;
             this.groupBoxStations.TabStop = false;
             this.groupBoxStations.Text = "Zarządzanie stacjami";
             // 
             // buttonAddStation
             // 
-            this.buttonAddStation.Location = new System.Drawing.Point(130, 26);
+            this.buttonAddStation.Location = new System.Drawing.Point(140, 28);
             this.buttonAddStation.Name = "buttonAddStation";
             this.buttonAddStation.Size = new System.Drawing.Size(75, 23);
             this.buttonAddStation.TabIndex = 1;
@@ -454,43 +497,25 @@
             this.dataGridViewCourses.Size = new System.Drawing.Size(862, 300);
             this.dataGridViewCourses.TabIndex = 1;
             // 
-            // groupBoxTrains
+            // buttonDisplayAllStations
             // 
-            this.groupBoxTrains.Controls.Add(this.buttonAddTrain);
-            this.groupBoxTrains.Controls.Add(this.textBoxTrainModel);
-            this.groupBoxTrains.Controls.Add(this.textBoxTrainName);
-            this.groupBoxTrains.Location = new System.Drawing.Point(13, 128);
-            this.groupBoxTrains.Name = "groupBoxTrains";
-            this.groupBoxTrains.Size = new System.Drawing.Size(875, 100);
-            this.groupBoxTrains.TabIndex = 3;
-            this.groupBoxTrains.TabStop = false;
-            this.groupBoxTrains.Text = "Zarządzanie pociągami";
+            this.buttonDisplayAllStations.Location = new System.Drawing.Point(234, 28);
+            this.buttonDisplayAllStations.Name = "buttonDisplayAllStations";
+            this.buttonDisplayAllStations.Size = new System.Drawing.Size(147, 23);
+            this.buttonDisplayAllStations.TabIndex = 2;
+            this.buttonDisplayAllStations.Text = "Wyświetl wszystkie stacje";
+            this.buttonDisplayAllStations.UseVisualStyleBackColor = true;
+            this.buttonDisplayAllStations.Click += new System.EventHandler(this.buttonDisplayAllStations_Click);
             // 
-            // textBoxTrainName
+            // buttonDisplayAllTrains
             // 
-            this.textBoxTrainName.Location = new System.Drawing.Point(7, 35);
-            this.textBoxTrainName.Name = "textBoxTrainName";
-            this.textBoxTrainName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTrainName.TabIndex = 0;
-            this.textBoxTrainName.Text = "Nazwa pociągu";
-            // 
-            // textBoxTrainModel
-            // 
-            this.textBoxTrainModel.Location = new System.Drawing.Point(114, 34);
-            this.textBoxTrainModel.Name = "textBoxTrainModel";
-            this.textBoxTrainModel.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTrainModel.TabIndex = 1;
-            this.textBoxTrainModel.Text = "Model";
-            // 
-            // buttonAddTrain
-            // 
-            this.buttonAddTrain.Location = new System.Drawing.Point(221, 31);
-            this.buttonAddTrain.Name = "buttonAddTrain";
-            this.buttonAddTrain.Size = new System.Drawing.Size(86, 23);
-            this.buttonAddTrain.TabIndex = 2;
-            this.buttonAddTrain.Text = "Dodaj pociąg";
-            this.buttonAddTrain.UseVisualStyleBackColor = true;
-            this.buttonAddTrain.Click += new System.EventHandler(this.buttonAddTrain_Click);
+            this.buttonDisplayAllTrains.Location = new System.Drawing.Point(341, 33);
+            this.buttonDisplayAllTrains.Name = "buttonDisplayAllTrains";
+            this.buttonDisplayAllTrains.Size = new System.Drawing.Size(147, 23);
+            this.buttonDisplayAllTrains.TabIndex = 3;
+            this.buttonDisplayAllTrains.Text = "Wyświetl wszystkie pociągi";
+            this.buttonDisplayAllTrains.UseVisualStyleBackColor = true;
+            this.buttonDisplayAllTrains.Click += new System.EventHandler(this.buttonDisplayAllTrains_Click);
             // 
             // AdminForm
             // 
@@ -501,7 +526,6 @@
             this.Controls.Add(this.dataGridViewCourses);
             this.Name = "AdminForm";
             this.Text = "Administrator";
-            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.tabControlAdmin.ResumeLayout(false);
             this.tabPageCourses.ResumeLayout(false);
             this.tabControlCourses.ResumeLayout(false);
@@ -518,11 +542,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).EndInit();
             this.groupBoxAddCourse.ResumeLayout(false);
             this.tabPageOthers.ResumeLayout(false);
+            this.groupBoxTrains.ResumeLayout(false);
+            this.groupBoxTrains.PerformLayout();
             this.groupBoxStations.ResumeLayout(false);
             this.groupBoxStations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
-            this.groupBoxTrains.ResumeLayout(false);
-            this.groupBoxTrains.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -569,5 +593,7 @@
         private System.Windows.Forms.Button buttonAddTrain;
         private System.Windows.Forms.TextBox textBoxTrainModel;
         private System.Windows.Forms.TextBox textBoxTrainName;
+        private System.Windows.Forms.Button buttonDisplayAllTrains;
+        private System.Windows.Forms.Button buttonDisplayAllStations;
     }
 }

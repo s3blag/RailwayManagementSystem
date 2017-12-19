@@ -33,7 +33,7 @@ namespace RailwayManagementSystem
             }
         }
 
-        public static void AddTrain(SqlConnection sqlConnection, string name, string model)
+        public static bool AddTrain(SqlConnection sqlConnection, string name, string model)
         {
             try
             {
@@ -41,13 +41,14 @@ namespace RailwayManagementSystem
                 string command = $"EXEC ADD_TRAIN " +
                                  $"'{name}', '{model}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
-                //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                return true;
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
+                return false;
             }
         }
     }
