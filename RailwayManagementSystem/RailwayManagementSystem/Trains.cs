@@ -41,15 +41,18 @@ namespace RailwayManagementSystem
                 string command = $"EXEC ADD_TRAIN " +
                                  $"'{name}', '{model}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                return true;
+                sqlCommand.ExecuteNonQuery();  
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return false;
             }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
         }
     }
 }

@@ -84,15 +84,18 @@ namespace RailwayManagementSystem
                                  $"'{trainId}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
-                sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                return true;
+                sqlCommand.ExecuteNonQuery();   
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return false;
             }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
         }
 
         public static int GetNumberOfVisits(SqlConnection sqlConnection, string courseId)
@@ -121,15 +124,18 @@ namespace RailwayManagementSystem
                 string command = $"EXEC DELETE_COURSE " +
                                  $"'{courseId}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
-                sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                return true;
+                sqlCommand.ExecuteNonQuery();   
             }
             catch (Exception err)
             {
                 Debug.WriteLine(err.Message);
                 return false;
             }
+            finally
+            {
+                sqlConnection.Close();  
+            }
+            return true;
         }
 
     }

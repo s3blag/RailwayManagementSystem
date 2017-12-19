@@ -40,14 +40,17 @@ namespace RailwayManagementSystem
                                  $"'{visitData.visit_order}', '{visitData.avaible_seats}', '{visitData.date}'";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                return true;
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return false;
             }
+            finally
+            {
+                sqlConnection.Close();    
+            }
+            return true;
         }
 
         public static string GetVisitId(SqlConnection sqlConnection, string courseId, string visitOrder)

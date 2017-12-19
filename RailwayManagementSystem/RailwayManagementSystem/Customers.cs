@@ -66,14 +66,17 @@ namespace RailwayManagementSystem
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
                 sqlCommand.ExecuteNonQuery();
-                sqlConnection.Close();
-                return true;
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return false;
-            } 
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+            return true;
         }
 
     }
