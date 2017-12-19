@@ -33,7 +33,10 @@ namespace RailwayManagementSystem
 
         private void CashierForm_Load(object sender, EventArgs e)
         {
-
+            textBoxSearchByName.TextChanged += textBoxSearch_TextChanged;
+            textBoxSearchBySurname.TextChanged += textBoxSearch_TextChanged;
+            textBoxSearchByEmail.TextChanged += textBoxSearch_TextChanged;
+            textBoxSearchByPhoneNumber.TextChanged += textBoxSearch_TextChanged;
         }
 
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
@@ -91,5 +94,23 @@ namespace RailwayManagementSystem
                 MessageBox.Show("Błędne dane! Pola nie mogą być puste!");
            
         }
+
+        private void textBoxSearch_TextChanged(object sender, EventArgs e)
+        {   
+            var name = textBoxSearchByName.Text;
+            var surname = textBoxSearchBySurname.Text;
+            var email = textBoxSearchByEmail.Text;
+            var phoneNumber = textBoxSearchByPhoneNumber.Text;
+
+            DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
+            string rowFilter = "";
+
+            rowFilter = string.Format("Imię LIKE '{0}%'", name);
+            rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
+            rowFilter += string.Format("AND Email LIKE '{0}%'", email);
+            rowFilter += string.Format("AND [Nr. tel.] LIKE '{0}%'", phoneNumber);
+            dataTable.DefaultView.RowFilter = rowFilter;
+        }
+
     }
 }
