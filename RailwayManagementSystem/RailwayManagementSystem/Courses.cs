@@ -75,7 +75,7 @@ namespace RailwayManagementSystem
             }
         }
 
-        public static void AddCourse(SqlConnection sqlConnection, int trainId)
+        public static bool AddCourse(SqlConnection sqlConnection, int trainId)
         {
             try
             {
@@ -86,10 +86,12 @@ namespace RailwayManagementSystem
                 //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
+                return true;
             }
             catch
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
+                return false;
             }
         }
 
@@ -108,6 +110,25 @@ namespace RailwayManagementSystem
             {
                 Debug.WriteLine("Błąd zapytania do bazy danych!");
                 return -1;
+            }
+        }
+
+        public static bool DeleteCourse(SqlConnection sqlConnection, int courseId)
+        {
+            try
+            {
+                sqlConnection.Open();
+                string command = $"EXEC DELETE_COURSE " +
+                                 $"'{courseId}'";
+                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
+                return true;
+            }
+            catch (Exception err)
+            {
+                Debug.WriteLine(err.Message);
+                return false;
             }
         }
 
