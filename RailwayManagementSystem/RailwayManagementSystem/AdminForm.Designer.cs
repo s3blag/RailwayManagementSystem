@@ -30,90 +30,79 @@
         {
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageCourses = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControlCourses = new System.Windows.Forms.TabControl();
             this.tabPageManage = new System.Windows.Forms.TabPage();
-            this.tabPageAdd = new System.Windows.Forms.TabPage();
-            this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
+            this.groupBoxManageCourses = new System.Windows.Forms.GroupBox();
+            this.buttonDeleteCourse = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonShowCourseVisits = new System.Windows.Forms.Button();
+            this.textBoxCourseVisits = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSelectAllCourses = new System.Windows.Forms.Button();
             this.buttonSearchAtoB = new System.Windows.Forms.Button();
             this.textBoxCityB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCityA = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonShowCourseVisits = new System.Windows.Forms.Button();
-            this.textBoxCourseVisits = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBoxManageCourses = new System.Windows.Forms.GroupBox();
-            this.buttonDeleteCourse = new System.Windows.Forms.Button();
-            this.buttonSelectAllCourses = new System.Windows.Forms.Button();
-            this.buttonAddCourse = new System.Windows.Forms.Button();
-            this.comboBoxTrains = new System.Windows.Forms.ComboBox();
-            this.groupBoxAddCourse = new System.Windows.Forms.GroupBox();
+            this.tabPageAdd = new System.Windows.Forms.TabPage();
             this.groupBoxAddVisit = new System.Windows.Forms.GroupBox();
-            this.comboBoxCourses = new System.Windows.Forms.ComboBox();
-            this.buttonAddVisit = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.numericUpDownHours = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownMinutes = new System.Windows.Forms.NumericUpDown();
-            this.labelHours = new System.Windows.Forms.Label();
-            this.labelMinutest = new System.Windows.Forms.Label();
-            this.labelDays = new System.Windows.Forms.Label();
             this.comboBoxStations = new System.Windows.Forms.ComboBox();
+            this.labelDays = new System.Windows.Forms.Label();
+            this.labelMinutest = new System.Windows.Forms.Label();
+            this.labelHours = new System.Windows.Forms.Label();
+            this.numericUpDownMinutes = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownHours = new System.Windows.Forms.NumericUpDown();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.buttonAddVisit = new System.Windows.Forms.Button();
+            this.comboBoxCourses = new System.Windows.Forms.ComboBox();
+            this.groupBoxAddCourse = new System.Windows.Forms.GroupBox();
+            this.comboBoxTrains = new System.Windows.Forms.ComboBox();
+            this.buttonAddCourse = new System.Windows.Forms.Button();
+            this.dataGridViewCourses = new System.Windows.Forms.DataGridView();
+            this.tabPageStations = new System.Windows.Forms.TabPage();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageCourses.SuspendLayout();
             this.tabControlCourses.SuspendLayout();
             this.tabPageManage.SuspendLayout();
-            this.tabPageAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBoxManageCourses.SuspendLayout();
-            this.groupBoxAddCourse.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPageAdd.SuspendLayout();
             this.groupBoxAddVisit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).BeginInit();
+            this.groupBoxAddCourse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAdmin
             // 
             this.tabControlAdmin.Controls.Add(this.tabPageCourses);
-            this.tabControlAdmin.Controls.Add(this.tabPage2);
-            this.tabControlAdmin.Location = new System.Drawing.Point(13, 13);
+            this.tabControlAdmin.Controls.Add(this.tabPageStations);
+            this.tabControlAdmin.Location = new System.Drawing.Point(13, 322);
             this.tabControlAdmin.Name = "tabControlAdmin";
             this.tabControlAdmin.SelectedIndex = 0;
-            this.tabControlAdmin.Size = new System.Drawing.Size(902, 751);
+            this.tabControlAdmin.Size = new System.Drawing.Size(902, 442);
             this.tabControlAdmin.TabIndex = 0;
             // 
             // tabPageCourses
             // 
             this.tabPageCourses.Controls.Add(this.tabControlCourses);
-            this.tabPageCourses.Controls.Add(this.dataGridViewCourses);
             this.tabPageCourses.Location = new System.Drawing.Point(4, 22);
             this.tabPageCourses.Name = "tabPageCourses";
             this.tabPageCourses.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageCourses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tabPageCourses.Size = new System.Drawing.Size(894, 725);
+            this.tabPageCourses.Size = new System.Drawing.Size(894, 416);
             this.tabPageCourses.TabIndex = 0;
             this.tabPageCourses.Text = "Kursy";
             this.tabPageCourses.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(894, 744);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControlCourses
             // 
             this.tabControlCourses.Controls.Add(this.tabPageManage);
             this.tabControlCourses.Controls.Add(this.tabPageAdd);
-            this.tabControlCourses.Location = new System.Drawing.Point(6, 312);
+            this.tabControlCourses.Location = new System.Drawing.Point(3, 6);
             this.tabControlCourses.Name = "tabControlCourses";
             this.tabControlCourses.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControlCourses.SelectedIndex = 0;
@@ -134,26 +123,62 @@
             this.tabPageManage.Text = "Zarządzaj";
             this.tabPageManage.UseVisualStyleBackColor = true;
             // 
-            // tabPageAdd
+            // groupBoxManageCourses
             // 
-            this.tabPageAdd.Controls.Add(this.groupBoxAddVisit);
-            this.tabPageAdd.Controls.Add(this.groupBoxAddCourse);
-            this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
-            this.tabPageAdd.Name = "tabPageAdd";
-            this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAdd.Size = new System.Drawing.Size(874, 381);
-            this.tabPageAdd.TabIndex = 1;
-            this.tabPageAdd.Text = "Dodaj";
-            this.tabPageAdd.UseVisualStyleBackColor = true;
+            this.groupBoxManageCourses.Controls.Add(this.buttonDeleteCourse);
+            this.groupBoxManageCourses.Location = new System.Drawing.Point(6, 273);
+            this.groupBoxManageCourses.Name = "groupBoxManageCourses";
+            this.groupBoxManageCourses.Size = new System.Drawing.Size(862, 100);
+            this.groupBoxManageCourses.TabIndex = 5;
+            this.groupBoxManageCourses.TabStop = false;
+            this.groupBoxManageCourses.Text = "Zarządzaj";
             // 
-            // dataGridViewCourses
+            // buttonDeleteCourse
             // 
-            this.dataGridViewCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCourses.Location = new System.Drawing.Point(10, 6);
-            this.dataGridViewCourses.Name = "dataGridViewCourses";
-            this.dataGridViewCourses.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dataGridViewCourses.Size = new System.Drawing.Size(862, 300);
-            this.dataGridViewCourses.TabIndex = 1;
+            this.buttonDeleteCourse.Location = new System.Drawing.Point(19, 41);
+            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
+            this.buttonDeleteCourse.Size = new System.Drawing.Size(101, 23);
+            this.buttonDeleteCourse.TabIndex = 0;
+            this.buttonDeleteCourse.Text = "Usuń zaznaczony";
+            this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonShowCourseVisits);
+            this.groupBox2.Controls.Add(this.textBoxCourseVisits);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(6, 141);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(862, 126);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Wyświetl trasę dla kursu";
+            // 
+            // buttonShowCourseVisits
+            // 
+            this.buttonShowCourseVisits.Location = new System.Drawing.Point(202, 67);
+            this.buttonShowCourseVisits.Name = "buttonShowCourseVisits";
+            this.buttonShowCourseVisits.Size = new System.Drawing.Size(75, 23);
+            this.buttonShowCourseVisits.TabIndex = 5;
+            this.buttonShowCourseVisits.Text = "Szukaj";
+            this.buttonShowCourseVisits.UseVisualStyleBackColor = true;
+            this.buttonShowCourseVisits.Click += new System.EventHandler(this.buttonShowCourseVisits_Click_1);
+            // 
+            // textBoxCourseVisits
+            // 
+            this.textBoxCourseVisits.Location = new System.Drawing.Point(19, 70);
+            this.textBoxCourseVisits.Name = "textBoxCourseVisits";
+            this.textBoxCourseVisits.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCourseVisits.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(16, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Podaj ID kursu:";
             // 
             // groupBox1
             // 
@@ -169,6 +194,16 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Wyświetl kursy";
+            // 
+            // buttonSelectAllCourses
+            // 
+            this.buttonSelectAllCourses.Location = new System.Drawing.Point(539, 78);
+            this.buttonSelectAllCourses.Name = "buttonSelectAllCourses";
+            this.buttonSelectAllCourses.Size = new System.Drawing.Size(122, 23);
+            this.buttonSelectAllCourses.TabIndex = 5;
+            this.buttonSelectAllCourses.Text = "Wyswietl wszystkie";
+            this.buttonSelectAllCourses.UseVisualStyleBackColor = true;
+            this.buttonSelectAllCourses.Click += new System.EventHandler(this.buttonSelectAllCourses_Click);
             // 
             // buttonSearchAtoB
             // 
@@ -212,102 +247,17 @@
             this.textBoxCityA.Size = new System.Drawing.Size(100, 20);
             this.textBoxCityA.TabIndex = 1;
             // 
-            // groupBox2
+            // tabPageAdd
             // 
-            this.groupBox2.Controls.Add(this.buttonShowCourseVisits);
-            this.groupBox2.Controls.Add(this.textBoxCourseVisits);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(6, 141);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(862, 126);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Wyświetl trasę dla kursu";
-            // 
-            // buttonShowCourseVisits
-            // 
-            this.buttonShowCourseVisits.Location = new System.Drawing.Point(202, 67);
-            this.buttonShowCourseVisits.Name = "buttonShowCourseVisits";
-            this.buttonShowCourseVisits.Size = new System.Drawing.Size(75, 23);
-            this.buttonShowCourseVisits.TabIndex = 5;
-            this.buttonShowCourseVisits.Text = "Szukaj";
-            this.buttonShowCourseVisits.UseVisualStyleBackColor = true;
-            this.buttonShowCourseVisits.Click += new System.EventHandler(this.buttonShowCourseVisits_Click_1);
-            // 
-            // textBoxCourseVisits
-            // 
-            this.textBoxCourseVisits.Location = new System.Drawing.Point(19, 70);
-            this.textBoxCourseVisits.Name = "textBoxCourseVisits";
-            this.textBoxCourseVisits.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCourseVisits.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Podaj ID kursu:";
-            // 
-            // groupBoxManageCourses
-            // 
-            this.groupBoxManageCourses.Controls.Add(this.buttonDeleteCourse);
-            this.groupBoxManageCourses.Location = new System.Drawing.Point(6, 273);
-            this.groupBoxManageCourses.Name = "groupBoxManageCourses";
-            this.groupBoxManageCourses.Size = new System.Drawing.Size(862, 100);
-            this.groupBoxManageCourses.TabIndex = 5;
-            this.groupBoxManageCourses.TabStop = false;
-            this.groupBoxManageCourses.Text = "Zarządzaj";
-            // 
-            // buttonDeleteCourse
-            // 
-            this.buttonDeleteCourse.Location = new System.Drawing.Point(19, 41);
-            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
-            this.buttonDeleteCourse.Size = new System.Drawing.Size(101, 23);
-            this.buttonDeleteCourse.TabIndex = 0;
-            this.buttonDeleteCourse.Text = "Usuń zaznaczony";
-            this.buttonDeleteCourse.UseVisualStyleBackColor = true;
-            // 
-            // buttonSelectAllCourses
-            // 
-            this.buttonSelectAllCourses.Location = new System.Drawing.Point(539, 78);
-            this.buttonSelectAllCourses.Name = "buttonSelectAllCourses";
-            this.buttonSelectAllCourses.Size = new System.Drawing.Size(122, 23);
-            this.buttonSelectAllCourses.TabIndex = 5;
-            this.buttonSelectAllCourses.Text = "Wyswietl wszystkie";
-            this.buttonSelectAllCourses.UseVisualStyleBackColor = true;
-            this.buttonSelectAllCourses.Click += new System.EventHandler(this.buttonSelectAllCourses_Click);
-            // 
-            // buttonAddCourse
-            // 
-            this.buttonAddCourse.Location = new System.Drawing.Point(147, 28);
-            this.buttonAddCourse.Name = "buttonAddCourse";
-            this.buttonAddCourse.Size = new System.Drawing.Size(101, 23);
-            this.buttonAddCourse.TabIndex = 0;
-            this.buttonAddCourse.Text = "Dodaj kurs";
-            this.buttonAddCourse.UseVisualStyleBackColor = true;
-            this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
-            // 
-            // comboBoxTrains
-            // 
-            this.comboBoxTrains.FormattingEnabled = true;
-            this.comboBoxTrains.Location = new System.Drawing.Point(20, 28);
-            this.comboBoxTrains.Name = "comboBoxTrains";
-            this.comboBoxTrains.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTrains.TabIndex = 1;
-            this.comboBoxTrains.Text = "Wybierz pociąg...";
-            // 
-            // groupBoxAddCourse
-            // 
-            this.groupBoxAddCourse.Controls.Add(this.comboBoxTrains);
-            this.groupBoxAddCourse.Controls.Add(this.buttonAddCourse);
-            this.groupBoxAddCourse.Location = new System.Drawing.Point(6, 6);
-            this.groupBoxAddCourse.Name = "groupBoxAddCourse";
-            this.groupBoxAddCourse.Size = new System.Drawing.Size(856, 74);
-            this.groupBoxAddCourse.TabIndex = 2;
-            this.groupBoxAddCourse.TabStop = false;
-            this.groupBoxAddCourse.Text = "Dodaj kurs";
+            this.tabPageAdd.Controls.Add(this.groupBoxAddVisit);
+            this.tabPageAdd.Controls.Add(this.groupBoxAddCourse);
+            this.tabPageAdd.Location = new System.Drawing.Point(4, 22);
+            this.tabPageAdd.Name = "tabPageAdd";
+            this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdd.Size = new System.Drawing.Size(874, 381);
+            this.tabPageAdd.TabIndex = 1;
+            this.tabPageAdd.Text = "Dodaj";
+            this.tabPageAdd.UseVisualStyleBackColor = true;
             // 
             // groupBoxAddVisit
             // 
@@ -327,44 +277,41 @@
             this.groupBoxAddVisit.TabStop = false;
             this.groupBoxAddVisit.Text = "Dodaj przystanek";
             // 
-            // comboBoxCourses
+            // comboBoxStations
             // 
-            this.comboBoxCourses.FormattingEnabled = true;
-            this.comboBoxCourses.Location = new System.Drawing.Point(17, 35);
-            this.comboBoxCourses.Name = "comboBoxCourses";
-            this.comboBoxCourses.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxCourses.TabIndex = 0;
-            this.comboBoxCourses.Text = "Wybierz kurs...";
-            this.comboBoxCourses.Click += new System.EventHandler(this.comboBoxCourses_Click);
+            this.comboBoxStations.FormattingEnabled = true;
+            this.comboBoxStations.Location = new System.Drawing.Point(144, 36);
+            this.comboBoxStations.Name = "comboBoxStations";
+            this.comboBoxStations.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStations.TabIndex = 7;
+            this.comboBoxStations.Text = "Wybierz stację...";
             // 
-            // buttonAddVisit
+            // labelDays
             // 
-            this.buttonAddVisit.Location = new System.Drawing.Point(395, 34);
-            this.buttonAddVisit.Name = "buttonAddVisit";
-            this.buttonAddVisit.Size = new System.Drawing.Size(100, 23);
-            this.buttonAddVisit.TabIndex = 1;
-            this.buttonAddVisit.Text = "Dodaj przystanek";
-            this.buttonAddVisit.UseVisualStyleBackColor = true;
-            this.buttonAddVisit.Click += new System.EventHandler(this.buttonAddVisit_Click);
+            this.labelDays.AutoSize = true;
+            this.labelDays.Location = new System.Drawing.Point(16, 59);
+            this.labelDays.Name = "labelDays";
+            this.labelDays.Size = new System.Drawing.Size(34, 13);
+            this.labelDays.TabIndex = 6;
+            this.labelDays.Text = "Dzień";
             // 
-            // monthCalendar1
+            // labelMinutest
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(16, 73);
-            this.monthCalendar1.MaxSelectionCount = 1;
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.labelMinutest.AutoSize = true;
+            this.labelMinutest.Location = new System.Drawing.Point(334, 17);
+            this.labelMinutest.Name = "labelMinutest";
+            this.labelMinutest.Size = new System.Drawing.Size(38, 13);
+            this.labelMinutest.TabIndex = 5;
+            this.labelMinutest.Text = "Minuty";
             // 
-            // numericUpDownHours
+            // labelHours
             // 
-            this.numericUpDownHours.Location = new System.Drawing.Point(289, 36);
-            this.numericUpDownHours.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.numericUpDownHours.Name = "numericUpDownHours";
-            this.numericUpDownHours.Size = new System.Drawing.Size(42, 20);
-            this.numericUpDownHours.TabIndex = 2;
+            this.labelHours.AutoSize = true;
+            this.labelHours.Location = new System.Drawing.Point(286, 17);
+            this.labelHours.Name = "labelHours";
+            this.labelHours.Size = new System.Drawing.Size(45, 13);
+            this.labelHours.TabIndex = 4;
+            this.labelHours.Text = "Godziny";
             // 
             // numericUpDownMinutes
             // 
@@ -378,41 +325,93 @@
             this.numericUpDownMinutes.Size = new System.Drawing.Size(41, 20);
             this.numericUpDownMinutes.TabIndex = 3;
             // 
-            // labelHours
+            // numericUpDownHours
             // 
-            this.labelHours.AutoSize = true;
-            this.labelHours.Location = new System.Drawing.Point(286, 17);
-            this.labelHours.Name = "labelHours";
-            this.labelHours.Size = new System.Drawing.Size(45, 13);
-            this.labelHours.TabIndex = 4;
-            this.labelHours.Text = "Godziny";
+            this.numericUpDownHours.Location = new System.Drawing.Point(289, 36);
+            this.numericUpDownHours.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.numericUpDownHours.Name = "numericUpDownHours";
+            this.numericUpDownHours.Size = new System.Drawing.Size(42, 20);
+            this.numericUpDownHours.TabIndex = 2;
             // 
-            // labelMinutest
+            // monthCalendar1
             // 
-            this.labelMinutest.AutoSize = true;
-            this.labelMinutest.Location = new System.Drawing.Point(334, 17);
-            this.labelMinutest.Name = "labelMinutest";
-            this.labelMinutest.Size = new System.Drawing.Size(38, 13);
-            this.labelMinutest.TabIndex = 5;
-            this.labelMinutest.Text = "Minuty";
+            this.monthCalendar1.Location = new System.Drawing.Point(16, 73);
+            this.monthCalendar1.MaxSelectionCount = 1;
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
             // 
-            // labelDays
+            // buttonAddVisit
             // 
-            this.labelDays.AutoSize = true;
-            this.labelDays.Location = new System.Drawing.Point(16, 59);
-            this.labelDays.Name = "labelDays";
-            this.labelDays.Size = new System.Drawing.Size(34, 13);
-            this.labelDays.TabIndex = 6;
-            this.labelDays.Text = "Dzień";
+            this.buttonAddVisit.Location = new System.Drawing.Point(395, 34);
+            this.buttonAddVisit.Name = "buttonAddVisit";
+            this.buttonAddVisit.Size = new System.Drawing.Size(100, 23);
+            this.buttonAddVisit.TabIndex = 1;
+            this.buttonAddVisit.Text = "Dodaj przystanek";
+            this.buttonAddVisit.UseVisualStyleBackColor = true;
+            this.buttonAddVisit.Click += new System.EventHandler(this.buttonAddVisit_Click);
             // 
-            // comboBoxStations
+            // comboBoxCourses
             // 
-            this.comboBoxStations.FormattingEnabled = true;
-            this.comboBoxStations.Location = new System.Drawing.Point(144, 36);
-            this.comboBoxStations.Name = "comboBoxStations";
-            this.comboBoxStations.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxStations.TabIndex = 7;
-            this.comboBoxStations.Text = "Wybierz stację...";
+            this.comboBoxCourses.FormattingEnabled = true;
+            this.comboBoxCourses.Location = new System.Drawing.Point(17, 35);
+            this.comboBoxCourses.Name = "comboBoxCourses";
+            this.comboBoxCourses.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxCourses.TabIndex = 0;
+            this.comboBoxCourses.Text = "Wybierz kurs...";
+            this.comboBoxCourses.Click += new System.EventHandler(this.comboBoxCourses_Click);
+            // 
+            // groupBoxAddCourse
+            // 
+            this.groupBoxAddCourse.Controls.Add(this.comboBoxTrains);
+            this.groupBoxAddCourse.Controls.Add(this.buttonAddCourse);
+            this.groupBoxAddCourse.Location = new System.Drawing.Point(6, 6);
+            this.groupBoxAddCourse.Name = "groupBoxAddCourse";
+            this.groupBoxAddCourse.Size = new System.Drawing.Size(856, 74);
+            this.groupBoxAddCourse.TabIndex = 2;
+            this.groupBoxAddCourse.TabStop = false;
+            this.groupBoxAddCourse.Text = "Dodaj kurs";
+            // 
+            // comboBoxTrains
+            // 
+            this.comboBoxTrains.FormattingEnabled = true;
+            this.comboBoxTrains.Location = new System.Drawing.Point(20, 28);
+            this.comboBoxTrains.Name = "comboBoxTrains";
+            this.comboBoxTrains.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTrains.TabIndex = 1;
+            this.comboBoxTrains.Text = "Wybierz pociąg...";
+            // 
+            // buttonAddCourse
+            // 
+            this.buttonAddCourse.Location = new System.Drawing.Point(147, 28);
+            this.buttonAddCourse.Name = "buttonAddCourse";
+            this.buttonAddCourse.Size = new System.Drawing.Size(101, 23);
+            this.buttonAddCourse.TabIndex = 0;
+            this.buttonAddCourse.Text = "Dodaj kurs";
+            this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.buttonAddCourse.Click += new System.EventHandler(this.buttonAddCourse_Click);
+            // 
+            // dataGridViewCourses
+            // 
+            this.dataGridViewCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCourses.Location = new System.Drawing.Point(30, 12);
+            this.dataGridViewCourses.Name = "dataGridViewCourses";
+            this.dataGridViewCourses.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dataGridViewCourses.Size = new System.Drawing.Size(862, 300);
+            this.dataGridViewCourses.TabIndex = 1;
+            // 
+            // tabPageStations
+            // 
+            this.tabPageStations.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStations.Name = "tabPageStations";
+            this.tabPageStations.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStations.Size = new System.Drawing.Size(894, 416);
+            this.tabPageStations.TabIndex = 1;
+            this.tabPageStations.Text = "Stacje";
+            this.tabPageStations.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 
@@ -420,6 +419,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 776);
             this.Controls.Add(this.tabControlAdmin);
+            this.Controls.Add(this.dataGridViewCourses);
             this.Name = "AdminForm";
             this.Text = "Administrator";
             this.Load += new System.EventHandler(this.AdminForm_Load);
@@ -427,18 +427,18 @@
             this.tabPageCourses.ResumeLayout(false);
             this.tabControlCourses.ResumeLayout(false);
             this.tabPageManage.ResumeLayout(false);
-            this.tabPageAdd.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxManageCourses.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBoxManageCourses.ResumeLayout(false);
-            this.groupBoxAddCourse.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPageAdd.ResumeLayout(false);
             this.groupBoxAddVisit.ResumeLayout(false);
             this.groupBoxAddVisit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinutes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHours)).EndInit();
+            this.groupBoxAddCourse.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourses)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -447,7 +447,7 @@
 
         private System.Windows.Forms.TabControl tabControlAdmin;
         private System.Windows.Forms.TabPage tabPageCourses;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageStations;
         private System.Windows.Forms.TabControl tabControlCourses;
         private System.Windows.Forms.TabPage tabPageManage;
         private System.Windows.Forms.TabPage tabPageAdd;
