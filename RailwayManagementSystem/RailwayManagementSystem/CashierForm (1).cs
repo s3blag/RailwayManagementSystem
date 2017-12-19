@@ -19,11 +19,7 @@ namespace RailwayManagementSystem
         {   
             InitializeComponent();
             this.CenterToScreen();
-            //Łukasz
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-            //Seba
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
             dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
         }
 
@@ -76,13 +72,13 @@ namespace RailwayManagementSystem
                 return "";
             }
 
-            var customerData = new Customers.CustomerData(textBoxNewCustomerName.Text != "" ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerSurname.Text != "" ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerAddress.Text != "" ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerCity.Text != "" ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerZipCode.Text != "" ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerPhoneNumber.Text != "" ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerEmail.Text != "" ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
+            var customerData = new Customers.CustomerData(textBoxCustomerName.Text != "" ? textBoxCustomerName.Text : SetDataIncorrect(),
+                                                          textBoxCustomerSurname.Text != "" ? textBoxCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxCustomerAddress1.Text != "" ? textBoxCustomerAddress1.Text : SetDataIncorrect(),
+                                                          textBoxCustomerAddress2.Text != "" ? textBoxCustomerAddress2.Text : SetDataIncorrect(),
+                                                          textBoxCustomerZipCode.Text != "" ? textBoxCustomerZipCode.Text : SetDataIncorrect(),
+                                                          textBoxCustomerPhoneNumber.Text != "" ? textBoxCustomerPhoneNumber.Text : SetDataIncorrect(),
+                                                          textBoxCustomerEmail.Text != "" ? textBoxCustomerEmail.Text : SetDataIncorrect());
             if (isDataCorrect)
             {
                 if (Customers.AddNewCustomer(sqlConnection, customerData))

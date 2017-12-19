@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,22 +65,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxCustomerAddress1 = new System.Windows.Forms.TextBox();
             this.buttonAddNewCustomer = new System.Windows.Forms.Button();
-            this.textBoxNewCustomerSurname = new System.Windows.Forms.TextBox();
-            this.textBoxNewCustomerName = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerSurname = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerName = new System.Windows.Forms.TextBox();
             this.dataGridViewCustomers = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.textBoxNewCustomerCity = new System.Windows.Forms.TextBox();
-            this.textBoxNewCustomerAddress = new System.Windows.Forms.TextBox();
-            this.textBoxNewCustomerPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxNewCustomerZipCode = new System.Windows.Forms.TextBox();
-            this.textBoxNewCustomerEmail = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -259,6 +246,7 @@
             this.textBoxSearchByPhoneNumber.Name = "textBoxSearchByPhoneNumber";
             this.textBoxSearchByPhoneNumber.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByPhoneNumber.TabIndex = 17;
+            //this.textBoxSearchByPhoneNumber.TextChanged += new System.EventHandler(this.textBoxSearchByPhoneNumber_TextChanged);
             // 
             // label14
             // 
@@ -268,6 +256,7 @@
             this.label14.Size = new System.Drawing.Size(65, 13);
             this.label14.TabIndex = 16;
             this.label14.Text = "Nr. telefonu:";
+
             // 
             // label13
             // 
@@ -277,6 +266,7 @@
             this.label13.Size = new System.Drawing.Size(35, 13);
             this.label13.TabIndex = 17;
             this.label13.Text = "Email:";
+
             // 
             // label11
             // 
@@ -286,6 +276,7 @@
             this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "Nazwisko:";
+
             // 
             // textBoxSearchByEmail
             // 
@@ -293,6 +284,7 @@
             this.textBoxSearchByEmail.Name = "textBoxSearchByEmail";
             this.textBoxSearchByEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByEmail.TabIndex = 16;
+           
             // 
             // label12
             // 
@@ -302,6 +294,7 @@
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 9;
             this.label12.Text = "Imię:";
+
             // 
             // textBoxSearchBySurname
             // 
@@ -309,6 +302,7 @@
             this.textBoxSearchBySurname.Name = "textBoxSearchBySurname";
             this.textBoxSearchBySurname.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchBySurname.TabIndex = 7;
+            
             // 
             // textBoxSearchByName
             // 
@@ -316,24 +310,13 @@
             this.textBoxSearchByName.Name = "textBoxSearchByName";
             this.textBoxSearchByName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByName.TabIndex = 8;
+           
             // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerEmail);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerPhoneNumber);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerZipCode);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerCity);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerAddress);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.textBoxCustomerEmail);
             this.groupBox3.Controls.Add(this.textBoxCustomerPhoneNumber);
@@ -347,98 +330,14 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.textBoxCustomerAddress1);
             this.groupBox3.Controls.Add(this.buttonAddNewCustomer);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerSurname);
-            this.groupBox3.Controls.Add(this.textBoxNewCustomerName);
+            this.groupBox3.Controls.Add(this.textBoxCustomerSurname);
+            this.groupBox3.Controls.Add(this.textBoxCustomerName);
             this.groupBox3.Location = new System.Drawing.Point(6, 408);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(702, 143);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dodaj klienta";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(0, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 23);
-            this.label10.TabIndex = 0;
-            // 
-            // textBoxCustomerEmail
-            // 
-            this.textBoxCustomerEmail.Location = new System.Drawing.Point(0, 0);
-            this.textBoxCustomerEmail.Name = "textBoxCustomerEmail";
-            this.textBoxCustomerEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerEmail.TabIndex = 1;
-            // 
-            // textBoxCustomerPhoneNumber
-            // 
-            this.textBoxCustomerPhoneNumber.Location = new System.Drawing.Point(0, 0);
-            this.textBoxCustomerPhoneNumber.Name = "textBoxCustomerPhoneNumber";
-            this.textBoxCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerPhoneNumber.TabIndex = 2;
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(0, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 23);
-            this.label9.TabIndex = 3;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(0, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 4;
-            // 
-            // textBoxCustomerZipCode
-            // 
-            this.textBoxCustomerZipCode.Location = new System.Drawing.Point(0, 0);
-            this.textBoxCustomerZipCode.Name = "textBoxCustomerZipCode";
-            this.textBoxCustomerZipCode.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerZipCode.TabIndex = 5;
-            // 
-            // textBoxCustomerAddress2
-            // 
-            this.textBoxCustomerAddress2.Location = new System.Drawing.Point(0, 0);
-            this.textBoxCustomerAddress2.Name = "textBoxCustomerAddress2";
-            this.textBoxCustomerAddress2.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerAddress2.TabIndex = 6;
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 23);
-            this.label7.TabIndex = 7;
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 23);
-            this.label6.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 23);
-            this.label5.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 23);
-            this.label4.TabIndex = 10;
-            // 
-            // textBoxCustomerAddress1
-            // 
-            this.textBoxCustomerAddress1.Location = new System.Drawing.Point(0, 0);
-            this.textBoxCustomerAddress1.Name = "textBoxCustomerAddress1";
-            this.textBoxCustomerAddress1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxCustomerAddress1.TabIndex = 11;
             // 
             // buttonAddNewCustomer
             // 
@@ -450,19 +349,19 @@
             this.buttonAddNewCustomer.UseVisualStyleBackColor = true;
             this.buttonAddNewCustomer.Click += new System.EventHandler(this.buttonAddNewCustomer_Click);
             // 
-            // textBoxNewCustomerSurname
+            // textBoxCustomerSurname
             // 
-            this.textBoxNewCustomerSurname.Location = new System.Drawing.Point(6, 90);
-            this.textBoxNewCustomerSurname.Name = "textBoxNewCustomerSurname";
-            this.textBoxNewCustomerSurname.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerSurname.TabIndex = 2;
+            this.textBoxCustomerSurname.Location = new System.Drawing.Point(6, 90);
+            this.textBoxCustomerSurname.Name = "textBoxCustomerSurname";
+            this.textBoxCustomerSurname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerSurname.TabIndex = 2;
             // 
-            // textBoxNewCustomerName
+            // textBoxCustomerName
             // 
-            this.textBoxNewCustomerName.Location = new System.Drawing.Point(6, 46);
-            this.textBoxNewCustomerName.Name = "textBoxNewCustomerName";
-            this.textBoxNewCustomerName.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerName.TabIndex = 3;
+            this.textBoxCustomerName.Location = new System.Drawing.Point(6, 46);
+            this.textBoxCustomerName.Name = "textBoxCustomerName";
+            this.textBoxCustomerName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCustomerName.TabIndex = 3;
             // 
             // dataGridViewCustomers
             // 
@@ -484,104 +383,6 @@
             this.tabPage3.Text = "Rezerwacje";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // textBoxNewCustomerCity
-            // 
-            this.textBoxNewCustomerCity.Location = new System.Drawing.Point(168, 90);
-            this.textBoxNewCustomerCity.Name = "textBoxNewCustomerCity";
-            this.textBoxNewCustomerCity.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerCity.TabIndex = 12;
-            // 
-            // textBoxNewCustomerAddress
-            // 
-            this.textBoxNewCustomerAddress.Location = new System.Drawing.Point(168, 46);
-            this.textBoxNewCustomerAddress.Name = "textBoxNewCustomerAddress";
-            this.textBoxNewCustomerAddress.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerAddress.TabIndex = 13;
-            // 
-            // textBoxNewCustomerPhoneNumber
-            // 
-            this.textBoxNewCustomerPhoneNumber.Location = new System.Drawing.Point(332, 90);
-            this.textBoxNewCustomerPhoneNumber.Name = "textBoxNewCustomerPhoneNumber";
-            this.textBoxNewCustomerPhoneNumber.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerPhoneNumber.TabIndex = 14;
-            // 
-            // textBoxNewCustomerZipCode
-            // 
-            this.textBoxNewCustomerZipCode.Location = new System.Drawing.Point(332, 46);
-            this.textBoxNewCustomerZipCode.Name = "textBoxNewCustomerZipCode";
-            this.textBoxNewCustomerZipCode.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerZipCode.TabIndex = 15;
-            // 
-            // textBoxNewCustomerEmail
-            // 
-            this.textBoxNewCustomerEmail.Location = new System.Drawing.Point(470, 67);
-            this.textBoxNewCustomerEmail.Name = "textBoxNewCustomerEmail";
-            this.textBoxNewCustomerEmail.Size = new System.Drawing.Size(100, 20);
-            this.textBoxNewCustomerEmail.TabIndex = 16;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 30);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(29, 13);
-            this.label15.TabIndex = 17;
-            this.label15.Text = "Imię:";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 74);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(56, 13);
-            this.label16.TabIndex = 18;
-            this.label16.Text = "Nazwisko:";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(165, 30);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 13);
-            this.label17.TabIndex = 19;
-            this.label17.Text = "ul./nr. domu:";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(165, 70);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(71, 13);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "Miejscowość:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(329, 30);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 13);
-            this.label19.TabIndex = 21;
-            this.label19.Text = "Kod pocztowy:";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(329, 73);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(41, 13);
-            this.label20.TabIndex = 22;
-            this.label20.Text = "Nr. tel.:";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(467, 53);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(35, 13);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "Email:";
-            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,7 +390,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(746, 774);
             this.Controls.Add(this.tabControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CashierForm";
             this.Text = "Kasjer";
             this.Load += new System.EventHandler(this.CashierForm_Load);
@@ -628,8 +428,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridViewCustomers;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBoxNewCustomerSurname;
-        private System.Windows.Forms.TextBox textBoxNewCustomerName;
+        private System.Windows.Forms.TextBox textBoxCustomerSurname;
+        private System.Windows.Forms.TextBox textBoxCustomerName;
         private System.Windows.Forms.Button buttonAddNewCustomer;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxCustomerEmail;
@@ -652,17 +452,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSearchBySurname;
         private System.Windows.Forms.TextBox textBoxSearchByName;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBoxNewCustomerEmail;
-        private System.Windows.Forms.TextBox textBoxNewCustomerPhoneNumber;
-        private System.Windows.Forms.TextBox textBoxNewCustomerZipCode;
-        private System.Windows.Forms.TextBox textBoxNewCustomerCity;
-        private System.Windows.Forms.TextBox textBoxNewCustomerAddress;
     }
 }

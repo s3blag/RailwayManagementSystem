@@ -23,11 +23,7 @@ namespace RailwayManagementSystem
         {
             InitializeComponent();
             this.CenterToScreen();
-            //Łukasz
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-            //Seba
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
         }
 
         public AdminForm(SqlConnection sqlConnection)
@@ -132,32 +128,6 @@ namespace RailwayManagementSystem
         private void comboBoxCourses_Click(object sender, EventArgs e)
         {
             dataGridViewCourses.DataSource = courses;
-        }
-
-        private void buttonAddStation_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Stations.AddStation(sqlConnection, textBoxStationName.Text);
-                dataGridViewCourses.DataSource = Stations.GetAllStations(sqlConnection);                
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }
-
-        private void buttonAddTrain_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Trains.AddTrain(sqlConnection, textBoxTrainName.Text, textBoxTrainModel.Text);
-                dataGridViewCourses.DataSource = Trains.GetAllTrains(sqlConnection);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
         }
     }
 }
