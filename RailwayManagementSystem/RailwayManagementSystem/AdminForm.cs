@@ -14,7 +14,6 @@ namespace RailwayManagementSystem
     public partial class AdminForm : Form
     {
         SqlConnection sqlConnection;
-        SqlDataAdapter sqlDataAdapter;
         DataTable trains;
         DataTable courses;
         DataTable stations;
@@ -24,9 +23,9 @@ namespace RailwayManagementSystem
             InitializeComponent();
             this.CenterToScreen();
             //Łukasz
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            //sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
             //Seba
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
 
         }
 
@@ -39,38 +38,56 @@ namespace RailwayManagementSystem
 
         private void buttonSearchAtoB_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, textBoxCityA.Text, textBoxCityB.Text))
+            string cityA = textBoxCityA.Text,
+                   cityB = textBoxCityB.Text;
+            
+            if(!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit))
+                try
                 {
-                    if (dataTable != null)
-                        dataGridViewCourses.DataSource = dataTable;
-                    else
-                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                    using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
+                    {
+                        if (dataTable != null)
+                            dataGridViewCourses.DataSource = dataTable;
+                        else
+                            MessageBox.Show("Kurs o podanych danych nie istnieje!");
+
+                    }
                 }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+            else
+                MessageBox.Show("Pola nie powinny zawierać cyfr");
+
         }
 
         private void buttonShowCourseVisits_Click_1(object sender, EventArgs e)
         {
-            try
+            string id = textBoxCourseVisits.Text;
+
+            if (id.All(char.IsDigit))
             {
-                using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, textBoxCourseVisits.Text))
+                try
                 {
-                    if (dataTable != null)
-                        dataGridViewCourses.DataSource = dataTable;
-                    else
-                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                    using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, id))
+                    {
+
+                        if (dataTable != null)
+                            dataGridViewCourses.DataSource = dataTable;
+                        else
+                            MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                        textBoxCourseVisits.Text = "";
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Błąd zapytania do BD");
                 }
             }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            else
+                MessageBox.Show("Nie podano liczby");
+
         }
 
         private void buttonSelectAllCourses_Click(object sender, EventArgs e)
@@ -177,30 +194,63 @@ namespace RailwayManagementSystem
 
         private void buttonAddStation_Click(object sender, EventArgs e)
         {
-            try
+            string stationName = textBoxStationName.Text;
+
+            if (!stationName.Any(char.IsDigit) && stationName.Any(char.IsLetter) && stationName.Length < 51)
             {
-                if (Stations.AddStation(sqlConnection, textBoxStationName.Text))
-                    MessageBox.Show("Stacja została dodana pomyślnie!");
-                dataGridViewCourses.DataSource = Stations.GetAllStations(sqlConnection);                
+                try
+                {
+                    if (Stations.AddStation(sqlConnection, stationName))
+                        MessageBox.Show("Stacja została dodana pomyślnie!");
+                    stations = Stations.GetAllStations(sqlConnection);
+                    dataGridViewCourses.DataSource = stations;
+
+                    comboBoxStations.Items.Clear();
+                    stations = Stations.GetAllStations(sqlConnection);
+                    for (int i = 0; i < stations.Rows.Count; i++)
+                        comboBoxStations.Items.Add(stations.Rows[i][1].ToString());
+
+                    textBoxStationName.Text = "";
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
             }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            else
+                MessageBox.Show("Nazwa stacji nie powinna zawierać cyfr/ nie powinna być pusta");
+
         }
 
         private void buttonAddTrain_Click(object sender, EventArgs e)
         {
-            try
+            string trainName = textBoxTrainName.Text,
+                   trainModel = textBoxTrainModel.Text;
+
+            if (trainName.Any(char.IsLetterOrDigit) && trainModel.Any(char.IsLetterOrDigit) && trainName.Length < 51 && trainModel.Length < 51)
             {
-                if (Trains.AddTrain(sqlConnection, textBoxTrainName.Text, textBoxTrainModel.Text))
-                    MessageBox.Show("Pociąg dodano pomyślnie!");
-                dataGridViewCourses.DataSource = Trains.GetAllTrains(sqlConnection);
+                try
+                {
+                    if (Trains.AddTrain(sqlConnection, trainName, trainModel))
+                        MessageBox.Show("Pociąg dodano pomyślnie!");
+                    trains = Trains.GetAllTrains(sqlConnection);
+                    dataGridViewCourses.DataSource = trains;
+
+                    comboBoxTrains.Items.Clear();
+                    for (int i = 0; i < trains.Rows.Count; i++)
+                        comboBoxTrains.Items.Add(trains.Rows[i][1].ToString());
+
+                    textBoxTrainName.Text = "";
+                    textBoxTrainModel.Text = "";
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
             }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            else
+                MessageBox.Show("Pola nie mogą być puste");
+
         }
 
         private void buttonDeleteCourse_Click(object sender, EventArgs e)
@@ -244,5 +294,7 @@ namespace RailwayManagementSystem
                 MessageBox.Show(err.Message);
             }
         }
+
+      
     }
 }

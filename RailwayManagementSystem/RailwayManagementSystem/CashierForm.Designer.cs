@@ -290,7 +290,7 @@
             // 
             // textBoxSearchByPhoneNumber
             // 
-            this.textBoxSearchByPhoneNumber.Location = new System.Drawing.Point(536, 78);
+            this.textBoxSearchByPhoneNumber.Location = new System.Drawing.Point(523, 81);
             this.textBoxSearchByPhoneNumber.Name = "textBoxSearchByPhoneNumber";
             this.textBoxSearchByPhoneNumber.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByPhoneNumber.TabIndex = 17;
@@ -298,7 +298,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(533, 62);
+            this.label14.Location = new System.Drawing.Point(520, 65);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 13);
             this.label14.TabIndex = 16;
@@ -307,7 +307,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(380, 62);
+            this.label13.Location = new System.Drawing.Point(367, 65);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 13);
             this.label13.TabIndex = 17;
@@ -316,7 +316,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(227, 62);
+            this.label11.Location = new System.Drawing.Point(214, 65);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 10;
@@ -324,7 +324,7 @@
             // 
             // textBoxSearchByEmail
             // 
-            this.textBoxSearchByEmail.Location = new System.Drawing.Point(383, 78);
+            this.textBoxSearchByEmail.Location = new System.Drawing.Point(370, 81);
             this.textBoxSearchByEmail.Name = "textBoxSearchByEmail";
             this.textBoxSearchByEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByEmail.TabIndex = 16;
@@ -332,7 +332,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(74, 62);
+            this.label12.Location = new System.Drawing.Point(61, 65);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(29, 13);
             this.label12.TabIndex = 9;
@@ -340,14 +340,14 @@
             // 
             // textBoxSearchBySurname
             // 
-            this.textBoxSearchBySurname.Location = new System.Drawing.Point(230, 78);
+            this.textBoxSearchBySurname.Location = new System.Drawing.Point(217, 81);
             this.textBoxSearchBySurname.Name = "textBoxSearchBySurname";
             this.textBoxSearchBySurname.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchBySurname.TabIndex = 7;
             // 
             // textBoxSearchByName
             // 
-            this.textBoxSearchByName.Location = new System.Drawing.Point(77, 78);
+            this.textBoxSearchByName.Location = new System.Drawing.Point(64, 81);
             this.textBoxSearchByName.Name = "textBoxSearchByName";
             this.textBoxSearchByName.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearchByName.TabIndex = 8;
