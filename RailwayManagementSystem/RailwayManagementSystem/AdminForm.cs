@@ -14,7 +14,6 @@ namespace RailwayManagementSystem
     public partial class AdminForm : Form
     {
         SqlConnection sqlConnection;
-        SqlDataAdapter sqlDataAdapter;
         DataTable trains;
         DataTable courses;
         DataTable stations;
@@ -42,10 +41,10 @@ namespace RailwayManagementSystem
             string cityA = textBoxCityA.Text,
                    cityB = textBoxCityB.Text;
             
-            if(cityA.Any(char.IsDigit) == false && cityB.Any(char.IsDigit) == false)
+            if(!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit))
                 try
                 {
-                    using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, textBoxCityA.Text, textBoxCityB.Text))
+                    using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
                     {
                         if (dataTable != null)
                             dataGridViewCourses.DataSource = dataTable;
@@ -197,7 +196,7 @@ namespace RailwayManagementSystem
         {
             string stationName = textBoxStationName.Text;
 
-            if (!stationName.Any(char.IsDigit) && stationName.Any(char.IsLetter))
+            if (!stationName.Any(char.IsDigit) && stationName.Any(char.IsLetter) && stationName.Length < 51)
             {
                 try
                 {
@@ -220,6 +219,7 @@ namespace RailwayManagementSystem
             }
             else
                 MessageBox.Show("Nazwa stacji nie powinna zawierać cyfr/ nie powinna być pusta");
+
         }
 
         private void buttonAddTrain_Click(object sender, EventArgs e)
@@ -227,7 +227,7 @@ namespace RailwayManagementSystem
             string trainName = textBoxTrainName.Text,
                    trainModel = textBoxTrainModel.Text;
 
-            if (trainName.Any(char.IsLetterOrDigit) && trainModel.Any(char.IsLetterOrDigit))
+            if (trainName.Any(char.IsLetterOrDigit) && trainModel.Any(char.IsLetterOrDigit) && trainName.Length < 51 && trainModel.Length < 51)
             {
                 try
                 {
@@ -248,7 +248,8 @@ namespace RailwayManagementSystem
                     MessageBox.Show(err.Message);
                 }
             }
-            MessageBox.Show("Pola nie mogą być puste");
+            else
+                MessageBox.Show("Pola nie mogą być puste");
 
         }
 

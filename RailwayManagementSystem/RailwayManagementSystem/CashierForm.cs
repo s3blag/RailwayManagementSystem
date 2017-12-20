@@ -41,7 +41,6 @@ namespace RailwayManagementSystem
             textBoxSearchBySurname.TextChanged += textBoxSearch_TextChanged;
             textBoxSearchByEmail.TextChanged += textBoxSearch_TextChanged;
             textBoxSearchByPhoneNumber.TextChanged += textBoxSearch_TextChanged;
-
         }
 
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
@@ -88,9 +87,7 @@ namespace RailwayManagementSystem
                 MessageBox.Show("ID musi być liczbą!");
                 textBoxCourseVisits.Text = "";
             }
-                
-
-            
+         
         }
 
         private void buttonAddNewCustomer_Click(object sender, EventArgs e)
@@ -104,13 +101,13 @@ namespace RailwayManagementSystem
             }
 
             var customerData = new Customers.CustomerData(
-                                                          textBoxNewCustomerName.Text.All(char.IsLetter) ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) && !textBoxNewCustomerSurname.Text.Contains(" ") ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Contains(" ") && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerCity.Text.All(char.IsLetter) ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerName.Text.All(char.IsLetter) && textBoxNewCustomerName.Text.Length < 51 ? textBoxNewCustomerName.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerSurname.Text.Length < 51 && textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) && !textBoxNewCustomerSurname.Text.Contains(" ") ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Length < 71 && textBoxNewCustomerAddress.Text.Contains(" ") && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerCity.Text.All(char.IsLetter) && textBoxNewCustomerCity.Text.Length < 51 ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
                                                           !textBoxNewCustomerZipCode.Text.Any(char.IsLetter) && textBoxNewCustomerZipCode.Text.Length == 6 && textBoxNewCustomerZipCode.Text.Contains('-') ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 && !textBoxNewCustomerPhoneNumber.Text.Contains(" ") ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect() );
+                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 && textBoxNewCustomerEmail.Text.Length < 51 ? textBoxNewCustomerEmail.Text : SetDataIncorrect() );
 
             if (isDataCorrect)
             {
@@ -125,15 +122,15 @@ namespace RailwayManagementSystem
             }
             else
                 MessageBox.Show("Błędne dane!");
-           
+
         }
 
         private void textBoxSearch_TextChanged(object sender, EventArgs e)
         {   
-            var name = textBoxSearchByName.Text;
-            var surname = textBoxSearchBySurname.Text;
-            var email = textBoxSearchByEmail.Text;
-            var phoneNumber = textBoxSearchByPhoneNumber.Text;
+            string name = textBoxSearchByName.Text;
+            string surname = textBoxSearchBySurname.Text;
+            string email = textBoxSearchByEmail.Text;
+            string phoneNumber = textBoxSearchByPhoneNumber.Text;
 
             DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
     
@@ -143,6 +140,7 @@ namespace RailwayManagementSystem
             rowFilter += string.Format("AND [Nr. tel.] LIKE '{0}%'", phoneNumber);
 
             dataTable.DefaultView.RowFilter = rowFilter;
+
         }
 
         private void buttonAdReservationSearchCoursesAB_Click(object sender, EventArgs e)
@@ -158,8 +156,8 @@ namespace RailwayManagementSystem
                 }
             else
                 MessageBox.Show("Nazwy stacji nie powinny zawierać cyfr");
+
         }
 
-      
     }
 }
