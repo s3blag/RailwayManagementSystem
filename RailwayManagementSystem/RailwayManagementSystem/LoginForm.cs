@@ -94,7 +94,6 @@ namespace RailwayManagementSystem
 
         private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (e.KeyChar == Convert.ToInt16(Keys.Enter))
             {
                 buttonLogin.PerformClick();
