@@ -20,7 +20,7 @@ namespace RailwayManagementSystem
                                  $"{customerId}, {price}, {courseId}, '{stationA}', '{stationB}', {seatNumber}";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.ExecuteNonQuery();
-                return true;
+
             }
             catch
             {
@@ -31,6 +31,29 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Close();
             }
+            return true;
+        }
+
+        public static DataTable GetCustomerReservations(SqlConnection sqlConnection, string customerID)
+        {
+            try
+            {
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC CUSTOMER_RESERVATION {customerID}", sqlConnection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    if (dataTable.Rows.Count != 0)
+                        return dataTable;
+                    else
+                        return null;
+                }
+            }
+            catch
+            {
+                Debug.WriteLine("Błąd zapytania do bazy danych!");
+                return null;
+            }
+
         }
     }
 }

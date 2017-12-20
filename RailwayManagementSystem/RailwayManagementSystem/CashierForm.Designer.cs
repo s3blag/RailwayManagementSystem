@@ -108,6 +108,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
+            this.textBoxSearchReservationCustomerID = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.buttonSearchReservation = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -119,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -632,6 +636,9 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.buttonSearchReservation);
+            this.tabPage4.Controls.Add(this.label25);
+            this.tabPage4.Controls.Add(this.textBoxSearchReservationCustomerID);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -872,6 +879,32 @@
             this.dataGridViewReservations.Size = new System.Drawing.Size(708, 348);
             this.dataGridViewReservations.TabIndex = 1;
             // 
+            // textBoxSearchReservationCustomerID
+            // 
+            this.textBoxSearchReservationCustomerID.Location = new System.Drawing.Point(18, 134);
+            this.textBoxSearchReservationCustomerID.Name = "textBoxSearchReservationCustomerID";
+            this.textBoxSearchReservationCustomerID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchReservationCustomerID.TabIndex = 0;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(15, 118);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(55, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "ID klienta:";
+            // 
+            // buttonSearchReservation
+            // 
+            this.buttonSearchReservation.Location = new System.Drawing.Point(153, 132);
+            this.buttonSearchReservation.Name = "buttonSearchReservation";
+            this.buttonSearchReservation.Size = new System.Drawing.Size(75, 24);
+            this.buttonSearchReservation.TabIndex = 2;
+            this.buttonSearchReservation.Text = "Szukaj";
+            this.buttonSearchReservation.UseVisualStyleBackColor = true;
+            this.buttonSearchReservation.Click += new System.EventHandler(this.buttonSearchReservation_Click);
+            // 
             // CashierForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -898,6 +931,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomers)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -991,5 +1026,8 @@
         private System.Windows.Forms.Button buttonAddReservation;
         private System.Windows.Forms.ComboBox comboBoxCityB;
         private System.Windows.Forms.ComboBox comboBoxCityA;
+        private System.Windows.Forms.Button buttonSearchReservation;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBoxSearchReservationCustomerID;
     }
 }

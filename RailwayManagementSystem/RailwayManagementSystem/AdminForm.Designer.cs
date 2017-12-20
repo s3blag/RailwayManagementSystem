@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
             this.tabControlAdmin = new System.Windows.Forms.TabControl();
             this.tabPageCourses = new System.Windows.Forms.TabPage();
             this.tabControlCourses = new System.Windows.Forms.TabControl();
@@ -587,6 +588,7 @@
             this.ClientSize = new System.Drawing.Size(928, 776);
             this.Controls.Add(this.tabControlAdmin);
             this.Controls.Add(this.dataGridViewCourses);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
             this.Text = "Administrator";
             this.tabControlAdmin.ResumeLayout(false);

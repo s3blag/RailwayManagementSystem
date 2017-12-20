@@ -54,7 +54,7 @@ namespace RailwayManagementSystem
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
         {
             string cityA = textBoxCityA.Text,
-                   cityB = textBoxCityA.Text;
+                   cityB = textBoxCityB.Text;
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
@@ -152,15 +152,14 @@ namespace RailwayManagementSystem
 
         private void textBoxSearch_TextChangedReservation(object sender, EventArgs e)
         {
-            var name = textBoxAddReservationSearchCustomerName.Text;
-            var surname = textBoxAddReservationSearchCustomerSurname.Text;
-            var email = textBoxAddReservationSearchCustomerEmail.Text;
-            var phoneNumber = textBoxAddReservationSearchCustomerPhoneNumber.Text;
+            string name = textBoxAddReservationSearchCustomerName.Text;
+            string surname = textBoxAddReservationSearchCustomerSurname.Text;
+            string email = textBoxAddReservationSearchCustomerEmail.Text;
+            string phoneNumber = textBoxAddReservationSearchCustomerPhoneNumber.Text;
 
             DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
-            string rowFilter = "";
 
-            rowFilter = string.Format("Imię LIKE '{0}%'", name);
+            string rowFilter = string.Format("Imię LIKE '{0}%'", name);
             rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
             rowFilter += string.Format("AND Email LIKE '{0}%'", email);
             rowFilter += string.Format("AND [Nr. tel.] LIKE '{0}%'", phoneNumber);
@@ -174,12 +173,21 @@ namespace RailwayManagementSystem
             string cityA = comboBoxCityA.Text;
             string cityB = comboBoxCityB.Text;
 
-            using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(sqlConnection, cityA, cityB))
+            if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                if (dataTable != null)
-                    dataGridViewReservations.DataSource = dataTable;
+                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(sqlConnection, cityA, cityB))
+                {
+                    if (dataTable != null)
+                        dataGridViewReservations.DataSource = dataTable;
+                    else
+                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                }
             }
-        }
+            else
+            {
+                MessageBox.Show("Nazwy stacji nie zawierają cyfr!");
+            }
+}
 
         private void buttonAddReservationSaveCourseID_Click(object sender, EventArgs e)
         {
@@ -187,7 +195,7 @@ namespace RailwayManagementSystem
             {
                 selectedCourse = Int32.Parse(dataGridViewReservations.Rows[dataGridViewReservations.CurrentCell.RowIndex].Cells[0].Value.ToString());
             }
-            catch (Exception err)
+            catch
             {
                 MessageBox.Show("Nie wybrano kursu!");
             }
@@ -217,9 +225,9 @@ namespace RailwayManagementSystem
             {
                 selectedCustomer = Int32.Parse(dataGridViewReservations.Rows[dataGridViewReservations.CurrentCell.RowIndex].Cells[0].Value.ToString());
             }
-            catch (Exception err)
+            catch
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show("Złe zaznaczenie użytkownika!");
             }
         }
 
@@ -231,15 +239,40 @@ namespace RailwayManagementSystem
             string courseId = selectedCourse.ToString();
             string stationA = comboBoxCityA.Text;
             string stationB = comboBoxCityB.Text;
+
             try
             {
                 string seatNumber = Seats.GetRandomSeat(sqlConnection, courseId, stationA, stationB).ToString();
                 if (Reservations.AddReservations(sqlConnection, customerId, price, courseId, stationA, stationB, seatNumber))
                     MessageBox.Show("Rezerwacja została pomyślnie dodana!");
+                else
+                    MessageBox.Show("Błąd! Rezerwacja nie została dodana!");
             }
-            catch (Exception err)
+            catch
             {
-                MessageBox.Show(err.Message);
+                MessageBox.Show("Błąd wprowadzonych danych!");
+            }
+        }
+
+        private void buttonSearchReservation_Click(object sender, EventArgs e)
+        {
+            string id = textBoxSearchReservationCustomerID.Text;
+
+            if (id.All(char.IsDigit) && id != "")
+            {
+                using (DataTable dataTable = Reservations.GetCustomerReservations(sqlConnection, id))
+                {
+                    if (dataTable != null)
+                        dataGridViewReservations.DataSource = dataTable;
+                    else
+                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("ID musi być liczbą!");
+                textBoxCourseVisits.Text = "";
             }
         }
     }
