@@ -49,7 +49,7 @@ namespace RailwayManagementSystem
             string cityA = textBoxCityA.Text,
                    cityB = textBoxCityA.Text;
 
-            if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit))
+            if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
                 using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
                 {
@@ -65,9 +65,6 @@ namespace RailwayManagementSystem
                 textBoxCityB.Text = "";
                 MessageBox.Show("Nazwy stacji nie zawierają cyfr");
             }
-                
-
-            
 
         }
 
@@ -75,7 +72,7 @@ namespace RailwayManagementSystem
         {
             string id = textBoxCourseVisits.Text;
 
-            if (id.All(char.IsDigit))
+            if (id.All(char.IsDigit) && id != "")
             {
                 using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, id))
                 {
@@ -108,22 +105,12 @@ namespace RailwayManagementSystem
 
             var customerData = new Customers.CustomerData(
                                                           textBoxNewCustomerName.Text.All(char.IsLetter) ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerSurname.Text.All(char.IsLetter) ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Contains(" ") && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerCity.Text.All(char.IsLetter) ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
                                                           !textBoxNewCustomerZipCode.Text.Any(char.IsLetter) && textBoxNewCustomerZipCode.Text.Length == 6 && textBoxNewCustomerZipCode.Text.Contains('-') ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
-
-
-            //var customerData = new Customers.CustomerData(textBoxNewCustomerName.Text != "" ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerSurname.Text != "" ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerAddress.Text != "" ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerCity.Text != "" ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerZipCode.Text != "" ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerPhoneNumber.Text != "" ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-            //                                              textBoxNewCustomerEmail.Text != "" ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
-
+                                                          textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 && !textBoxNewCustomerPhoneNumber.Text.Contains(" ") ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
 
             if (isDataCorrect)
             {
