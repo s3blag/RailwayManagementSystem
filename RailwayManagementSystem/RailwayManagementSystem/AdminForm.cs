@@ -51,6 +51,7 @@ namespace RailwayManagementSystem
                             dataGridViewCourses.DataSource = dataTable;
                         else
                             MessageBox.Show("Kurs o podanych danych nie istnieje!");
+
                     }
                 }
                 catch (Exception err)
@@ -77,6 +78,7 @@ namespace RailwayManagementSystem
                             dataGridViewCourses.DataSource = dataTable;
                         else
                             MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                        textBoxCourseVisits.Text = "";
                     }
                 }
                 catch

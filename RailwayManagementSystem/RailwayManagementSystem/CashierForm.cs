@@ -20,9 +20,9 @@ namespace RailwayManagementSystem
             InitializeComponent();
             this.CenterToScreen();
             //Łukasz
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            //sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
             //Seba
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
 
             dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
         }
@@ -46,25 +46,54 @@ namespace RailwayManagementSystem
 
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
         {
-            using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, textBoxCityA.Text, textBoxCityB.Text))
+            string cityA = textBoxCityA.Text,
+                   cityB = textBoxCityA.Text;
+
+            if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit))
             {
-                if ( dataTable != null)
-                    dataGridViewCourses.DataSource = dataTable;
-                else
-                    MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
+                {
+                    if (dataTable != null)
+                        dataGridViewCourses.DataSource = dataTable;
+                    else
+                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+                }
             }
-           
+            else
+            {
+                textBoxCityA.Text = "";
+                textBoxCityB.Text = "";
+                MessageBox.Show("Nazwy stacji nie zawierają cyfr");
+            }
+                
+
+            
+
         }
 
         private void buttonShowCourseVisits_Click(object sender, EventArgs e)
         {
-            using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, textBoxCourseVisits.Text))
-            {   
-                if (dataTable != null)
-                    dataGridViewCourses.DataSource = dataTable;
-                else
-                    MessageBox.Show("Kurs o podanych danych nie istnieje!");
+            string id = textBoxCourseVisits.Text;
+
+            if (id.All(char.IsDigit))
+            {
+                using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, id))
+                {
+                    if (dataTable != null)
+                        dataGridViewCourses.DataSource = dataTable;
+                    else
+                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
+
+                }
             }
+            else
+            {
+                MessageBox.Show("ID musi być liczbą!");
+                textBoxCourseVisits.Text = "";
+            }
+                
+
+            
         }
 
         private void buttonAddNewCustomer_Click(object sender, EventArgs e)
@@ -77,13 +106,25 @@ namespace RailwayManagementSystem
                 return "";
             }
 
-            var customerData = new Customers.CustomerData(textBoxNewCustomerName.Text != "" ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerSurname.Text != "" ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerAddress.Text != "" ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerCity.Text != "" ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerZipCode.Text != "" ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerPhoneNumber.Text != "" ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerEmail.Text != "" ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
+            var customerData = new Customers.CustomerData(
+                                                          textBoxNewCustomerName.Text.All(char.IsLetter) ? textBoxNewCustomerName.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerSurname.Text.All(char.IsLetter) ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerCity.Text.All(char.IsLetter) ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
+                                                          !textBoxNewCustomerZipCode.Text.Any(char.IsLetter) && textBoxNewCustomerZipCode.Text.Length == 6 && textBoxNewCustomerZipCode.Text.Contains('-') ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
+
+
+            //var customerData = new Customers.CustomerData(textBoxNewCustomerName.Text != "" ? textBoxNewCustomerName.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerSurname.Text != "" ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerAddress.Text != "" ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerCity.Text != "" ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerZipCode.Text != "" ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerPhoneNumber.Text != "" ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
+            //                                              textBoxNewCustomerEmail.Text != "" ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
+
+
             if (isDataCorrect)
             {
                 if (Customers.AddNewCustomer(sqlConnection, customerData))
@@ -96,7 +137,7 @@ namespace RailwayManagementSystem
                     MessageBox.Show("Nie udało się dodać użytkownika!");
             }
             else
-                MessageBox.Show("Błędne dane! Pola nie mogą być puste!");
+                MessageBox.Show("Błędne dane!");
            
         }
 
@@ -108,12 +149,12 @@ namespace RailwayManagementSystem
             var phoneNumber = textBoxSearchByPhoneNumber.Text;
 
             DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
-            string rowFilter = "";
-
-            rowFilter = string.Format("Imię LIKE '{0}%'", name);
+    
+            string rowFilter = string.Format("Imię LIKE '{0}%'", name);
             rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
             rowFilter += string.Format("AND Email LIKE '{0}%'", email);
             rowFilter += string.Format("AND [Nr. tel.] LIKE '{0}%'", phoneNumber);
+
             dataTable.DefaultView.RowFilter = rowFilter;
         }
 
@@ -122,11 +163,14 @@ namespace RailwayManagementSystem
             string cityA = textBoxAddReservationCityA.Text;
             string cityB = textBoxAddReservationCityB.Text;
 
-            using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
-            {
-                if (dataTable != null)
-                    dataGridViewReservations.DataSource = dataTable;
-            }
+            if (cityA.Any(char.IsDigit) == false && cityB.Any(char.IsDigit) == false)
+                using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
+                {
+                    if (dataTable != null)
+                        dataGridViewReservations.DataSource = dataTable;
+                }
+            else
+                MessageBox.Show("Nazwy stacji nie powinny zawierać cyfr");
         }
 
       
