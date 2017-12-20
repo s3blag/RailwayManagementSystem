@@ -12,6 +12,28 @@ namespace RailwayManagementSystem
 {
     internal static class Courses
     {
+
+        public static DataTable GetAvaibleCoursesFromAtoB(SqlConnection sqlConnection, string cityA, string cityB)
+        {
+            try
+            {
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_COURSES '{cityA}', '{cityB}'", sqlConnection))
+                {
+                    DataTable dataTable = new DataTable();
+                    sqlDataAdapter.Fill(dataTable);
+                    if (dataTable.Rows.Count != 0)
+                        return dataTable;
+                    else
+                        return null;
+                }
+            }
+            catch
+            {
+                Debug.WriteLine("Błąd zapytania do bazy danych!");
+                return null;
+            }
+        }
+
         public static DataTable GetCoursesFromAtoB(SqlConnection sqlConnection, string cityA, string cityB)
         {
             try
