@@ -105,12 +105,12 @@ namespace RailwayManagementSystem
 
             var customerData = new Customers.CustomerData(
                                                           textBoxNewCustomerName.Text.All(char.IsLetter) ? textBoxNewCustomerName.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) && !textBoxNewCustomerSurname.Text.Contains(" ") ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Contains(" ") && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerCity.Text.All(char.IsLetter) ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
                                                           !textBoxNewCustomerZipCode.Text.Any(char.IsLetter) && textBoxNewCustomerZipCode.Text.Length == 6 && textBoxNewCustomerZipCode.Text.Contains('-') ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 && !textBoxNewCustomerPhoneNumber.Text.Contains(" ") ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect());
+                                                          textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 ? textBoxNewCustomerEmail.Text : SetDataIncorrect() );
 
             if (isDataCorrect)
             {
