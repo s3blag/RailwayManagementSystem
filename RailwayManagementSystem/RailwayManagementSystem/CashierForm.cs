@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -14,7 +9,7 @@ namespace RailwayManagementSystem
 {
     public partial class CashierForm : Form
     {
-        SqlConnection sqlConnection;
+        SqlConnection _sqlConnection;
         int selectedCourse = -1;
         int selectedCustomer = -1;
 
@@ -22,19 +17,20 @@ namespace RailwayManagementSystem
         {   
             InitializeComponent();
             this.CenterToScreen();
-            //Łukasz
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-            //Seba
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
 
-            dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
+            var machineName = Environment.MachineName;
+            _sqlConnection = new SqlConnection("Data Source=" + machineName + "\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
+
+            dataGridViewCustomers.DataSource = Customers.GetAllCustomers(_sqlConnection);
         }
 
         public CashierForm(SqlConnection sqlConnection)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.sqlConnection = sqlConnection;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            this._sqlConnection = sqlConnection;
             dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
         }
 
@@ -58,7 +54,7 @@ namespace RailwayManagementSystem
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                using (DataTable dataTable = Courses.GetCoursesFromAtoB(sqlConnection, cityA, cityB))
+                using (DataTable dataTable = Courses.GetCoursesFromAtoB(_sqlConnection, cityA, cityB))
                 {
                     if (dataTable != null)
                         dataGridViewCourses.DataSource = dataTable;
@@ -81,7 +77,7 @@ namespace RailwayManagementSystem
 
             if (id.All(char.IsDigit) && id != "")
             {
-                using (DataTable dataTable = Courses.GetCourseVisits(sqlConnection, id))
+                using (DataTable dataTable = Courses.GetCourseVisits(_sqlConnection, id))
                 {
                     if (dataTable != null)
                         dataGridViewCourses.DataSource = dataTable;
@@ -119,10 +115,10 @@ namespace RailwayManagementSystem
 
             if (isDataCorrect)
             {
-                if (Customers.AddNewCustomer(sqlConnection, customerData))
+                if (Customers.AddNewCustomer(_sqlConnection, customerData))
                 {
                     MessageBox.Show("Pomyślnie dodano użytkownika");
-                    dataGridViewCustomers.DataSource = Customers.GetAllCustomers(sqlConnection);
+                    dataGridViewCustomers.DataSource = Customers.GetAllCustomers(_sqlConnection);
                 }
                 else
                     //Taki użytkownik już istnieje
@@ -175,7 +171,7 @@ namespace RailwayManagementSystem
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(sqlConnection, cityA, cityB))
+                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
                 {
                     if (dataTable != null)
                         dataGridViewReservations.DataSource = dataTable;
@@ -207,7 +203,7 @@ namespace RailwayManagementSystem
             {
                 comboBoxCityA.Items.Clear();
                 comboBoxCityB.Items.Clear();
-                var stations = Stations.GetAllStations(sqlConnection);
+                var stations = Stations.GetAllStations(_sqlConnection);
                 for (int i = 0; i < stations.Rows.Count; i++)
                 {
                     comboBoxCityA.Items.Add(stations.Rows[i][1].ToString());
@@ -243,8 +239,8 @@ namespace RailwayManagementSystem
 
             try
             {
-                string seatNumber = Seats.GetRandomSeat(sqlConnection, courseId, stationA, stationB).ToString();
-                if (Reservations.AddReservations(sqlConnection, customerId, price, courseId, stationA, stationB, seatNumber))
+                string seatNumber = Seats.GetRandomSeat(_sqlConnection, courseId, stationA, stationB).ToString();
+                if (Reservations.AddReservations(_sqlConnection, customerId, price, courseId, stationA, stationB, seatNumber))
                     MessageBox.Show("Rezerwacja została pomyślnie dodana!");
                 else
                     MessageBox.Show("Błąd! Rezerwacja nie została dodana!");
@@ -261,7 +257,7 @@ namespace RailwayManagementSystem
 
             if (id.All(char.IsDigit) && id != "")
             {
-                using (DataTable dataTable = Reservations.GetCustomerReservations(sqlConnection, id))
+                using (DataTable dataTable = Reservations.GetCustomerReservations(_sqlConnection, id))
                 {
                     if (dataTable != null)
                         dataGridViewReservations.DataSource = dataTable;
@@ -275,6 +271,11 @@ namespace RailwayManagementSystem
                 MessageBox.Show("ID musi być liczbą!");
                 textBoxCourseVisits.Text = "";
             }
+        }
+
+        private void CashierForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _sqlConnection.Dispose();
         }
     }
 }

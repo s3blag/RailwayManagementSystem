@@ -77,7 +77,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = global::RailwayManagementSystem.Properties.Resources.bckgrnd;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(474, 403);
+            this.ClientSize = new System.Drawing.Size(495, 445);
             this.Controls.Add(this.comboBoxUserType);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.buttonLogin);

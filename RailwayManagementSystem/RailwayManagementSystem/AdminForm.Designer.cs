@@ -591,6 +591,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminForm";
             this.Text = "Administrator";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AdminForm_FormClosed);
             this.tabControlAdmin.ResumeLayout(false);
             this.tabPageCourses.ResumeLayout(false);
             this.tabControlCourses.ResumeLayout(false);

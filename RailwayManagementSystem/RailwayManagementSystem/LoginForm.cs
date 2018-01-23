@@ -1,35 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RailwayManagementSystem
 {
     public partial class LoginForm : Form
     {
-        SqlConnection sqlConnection;
+        private SqlConnection _sqlConnection;
 
-        private static string adminPassword = "admin";
-        private static string cashierPassword = "cashier";
+        private static string _adminPassword = "admin";
+        private static string _cashierPassword = "cashier";
 
-        bool textBoxModified = false;
+        private bool _textBoxModified = false;
 
         public LoginForm()
         {
             InitializeComponent();
             this.CenterToScreen();
-            //Łukasz
-            //sqlConnection = new SqlConnection("Data Source=DESKTOP-CDUIBQ6\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
-            //Seba
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-G92BDEO\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
 
+            var machineName = Environment.MachineName;
+            _sqlConnection = new SqlConnection("Data Source="+ machineName + "\\SQLEXPRESS; database=SRBK_database;Trusted_Connection=yes");
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -37,6 +27,9 @@ namespace RailwayManagementSystem
             comboBoxUserType.SelectedIndex = 1;
             textBoxPassword.Text = "Podaj hasło...";
             this.ActiveControl = textBoxPassword;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+
             textBoxPassword.SelectionStart = 0;
         }
 
@@ -45,12 +38,12 @@ namespace RailwayManagementSystem
             switch(comboBoxIndex)
             {
                 case 0:
-                    if (password.Equals(adminPassword))
+                    if (password.Equals(_adminPassword))
                         return true;
                     else
                         return false;
                 case 1:
-                    if (password.Equals(cashierPassword))
+                    if (password.Equals(_cashierPassword))
                         return true;
                     else
                         return false;
@@ -68,14 +61,14 @@ namespace RailwayManagementSystem
                 switch (comboBoxUserType.SelectedIndex)
                 {
                     case 0:
-                        var adminForm = new AdminForm(this.sqlConnection);
+                        var adminForm = new AdminForm(this._sqlConnection);
                         adminForm.FormClosed += new FormClosedEventHandler(ChildForm_FormClosed);
                         adminForm.Show();
                         this.Hide();
                         break;
 
                     case 1:
-                        var cashierForm = new CashierForm(this.sqlConnection);
+                        var cashierForm = new CashierForm(this._sqlConnection);
                         cashierForm.FormClosed += new FormClosedEventHandler(ChildForm_FormClosed);
                         cashierForm.Show();
                         this.Hide();
@@ -100,9 +93,9 @@ namespace RailwayManagementSystem
                 e.Handled = true;
             }
 
-            if (!textBoxModified)
+            if (!_textBoxModified)
             {
-                textBoxModified = true;
+                _textBoxModified = true;
                 textBoxPassword.Clear();
                 textBoxPassword.UseSystemPasswordChar = true;
                 textBoxPassword.Text = e.KeyChar.ToString();
