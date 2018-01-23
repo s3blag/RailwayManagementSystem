@@ -33,7 +33,7 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC CUSTOMER_RESERVATION {customerID}", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_CUSTOMER_RESERVATION {customerID}", sqlConnection))
                 {
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
