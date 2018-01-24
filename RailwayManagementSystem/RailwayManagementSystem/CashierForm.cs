@@ -108,7 +108,7 @@ namespace RailwayManagementSystem
                                                           textBoxNewCustomerName.Text.All(char.IsLetter) && textBoxNewCustomerName.Text.Length < 51 ? textBoxNewCustomerName.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerSurname.Text.Length < 51 && textBoxNewCustomerSurname.Text.Any(char.IsLetter) && !textBoxNewCustomerSurname.Text.Any(char.IsDigit) && !textBoxNewCustomerSurname.Text.Contains(" ") ? textBoxNewCustomerSurname.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerAddress.Text.Any(char.IsLetter) && textBoxNewCustomerAddress.Text.Length < 71 && textBoxNewCustomerAddress.Text.Contains(" ") && textBoxNewCustomerAddress.Text.Any(char.IsDigit) ? textBoxNewCustomerAddress.Text : SetDataIncorrect(),
-                                                          textBoxNewCustomerCity.Text.All(char.IsLetter) && textBoxNewCustomerCity.Text.Length < 51 ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
+                                                          textBoxNewCustomerCity.Text.Any(char.IsLetter) && !textBoxNewCustomerCity.Text.Any(char.IsDigit) && !String.IsNullOrWhiteSpace(textBoxNewCustomerCity.Text) && textBoxNewCustomerCity.Text.Length < 51 ? textBoxNewCustomerCity.Text : SetDataIncorrect(),
                                                           !textBoxNewCustomerZipCode.Text.Any(char.IsLetter) && textBoxNewCustomerZipCode.Text.Length == 6 && textBoxNewCustomerZipCode.Text.Contains('-') ? textBoxNewCustomerZipCode.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerPhoneNumber.Text.All(char.IsDigit) && textBoxNewCustomerPhoneNumber.Text.Length == 11 && !textBoxNewCustomerPhoneNumber.Text.Contains(" ") ? textBoxNewCustomerPhoneNumber.Text : SetDataIncorrect(),
                                                           textBoxNewCustomerEmail.Text.Contains('@') && textBoxNewCustomerEmail.Text.Contains('.') && !textBoxNewCustomerEmail.Text.Contains(" ") && textBoxNewCustomerEmail.Text.Length > 2 && textBoxNewCustomerEmail.Text.Length < 51 ? textBoxNewCustomerEmail.Text : SetDataIncorrect() );
@@ -234,20 +234,26 @@ namespace RailwayManagementSystem
             string customerId = selectedCustomer.ToString();
             string price = 30.ToString();
             string courseId = selectedCourse.ToString();
-            string stationA = comboBoxCityA.Text;
-            string stationB = comboBoxCityB.Text;
-
-            try
+            string cityA = comboBoxCityA.Text;
+            string cityB = comboBoxCityB.Text;
+            if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                string seatNumber = Seats.GetRandomSeat(_sqlConnection, courseId, stationA, stationB).ToString();
-                if (Reservations.AddReservations(_sqlConnection, customerId, price, courseId, stationA, stationB, seatNumber))
-                    MessageBox.Show("Rezerwacja została pomyślnie dodana!");
-                else
-                    MessageBox.Show("Błąd! Rezerwacja nie została dodana!");
+                try
+                {
+                    string seatNumber = Seats.GetRandomSeat(_sqlConnection, courseId, cityA, cityB).ToString();
+                    if (Reservations.AddReservations(_sqlConnection, customerId, price, courseId, cityA, cityB, seatNumber))
+                        MessageBox.Show("Rezerwacja została pomyślnie dodana!");
+                    else
+                        MessageBox.Show("Błąd! Rezerwacja nie została dodana!");
+                }
+                catch
+                {
+                    MessageBox.Show("Błąd wprowadzonych danych!");
+                }
             }
-            catch
+            else
             {
-                MessageBox.Show("Błąd wprowadzonych danych!");
+                MessageBox.Show("Nazwy stacji nie zawierają cyfr!");
             }
         }
 
@@ -262,8 +268,7 @@ namespace RailwayManagementSystem
                     if (dataTable != null)
                         dataGridViewReservations.DataSource = dataTable;
                     else
-                        MessageBox.Show("Kurs o podanych danych nie istnieje!");
-
+                        MessageBox.Show("Podany klient nie posiada rezerwacji!");
                 }
             }
             else

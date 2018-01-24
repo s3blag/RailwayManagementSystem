@@ -57,8 +57,9 @@
     <Compile Include="CashierForm.Designer.cs">
       <DependentUpon>CashierForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controlers\Courses.cs" />
-    <Compile Include="Controlers\Customers.cs" />
+    <Compile Include="Controllers\Courses.cs" />
+    <Compile Include="Controllers\Customers.cs" />
+    <Compile Include="Controllers\Logins.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,11 +68,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controlers\Reservations.cs" />
-    <Compile Include="Controlers\Seats.cs" />
-    <Compile Include="Controlers\Stations.cs" />
-    <Compile Include="Controlers\Trains.cs" />
-    <Compile Include="Controlers\Visits.cs" />
+    <Compile Include="Controllers\Reservations.cs" />
+    <Compile Include="Controllers\Seats.cs" />
+    <Compile Include="Controllers\Stations.cs" />
+    <Compile Include="Controllers\Trains.cs" />
+    <Compile Include="Controllers\Visits.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
