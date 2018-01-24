@@ -55,10 +55,17 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC CREATE_NEWCUSTOMER " +
-                                 $"'{customerData.name}', '{customerData.surname}'," +
-                                 $"'{customerData.address}', '{customerData.city}', '{customerData.zipCode}'," +
-                                 $"'{customerData.phoneNumber}', '{customerData.email}'";
+                                 $"@name, @surname," +
+                                 $"@address, @city, @zipCode," +
+                                 $"@phoneNumber, @email";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@name", customerData.name);
+                sqlCommand.Parameters.AddWithValue("@surname", customerData.surname);
+                sqlCommand.Parameters.AddWithValue("@address", customerData.address);
+                sqlCommand.Parameters.AddWithValue("@city", customerData.city);
+                sqlCommand.Parameters.AddWithValue("@zipCode", customerData.zipCode);
+                sqlCommand.Parameters.AddWithValue("@phoneNumber", customerData.phoneNumber);
+                sqlCommand.Parameters.AddWithValue("@email", customerData.email);
                 //Można się pobawić w informowanie, że dodano x wierszy, bo zwraca int
                 sqlCommand.ExecuteNonQuery();
             }

@@ -54,7 +54,7 @@ namespace RailwayManagementSystem
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                using (DataTable dataTable = Courses.GetCoursesFromAtoB(_sqlConnection, cityA, cityB))
+                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
                 {
                     if (dataTable != null)
                         dataGridViewCourses.DataSource = dataTable;
@@ -64,11 +64,8 @@ namespace RailwayManagementSystem
             }
             else
             {
-                textBoxCityA.Text = "";
-                textBoxCityB.Text = "";
-                MessageBox.Show("Nazwy stacji nie zawierają cyfr");
+                MessageBox.Show("Nazwy stacji nie zawierają cyfr!");
             }
-
         }
 
         private void buttonShowCourseVisits_Click(object sender, EventArgs e)

@@ -850,6 +850,7 @@
             this.comboBoxCityB.Location = new System.Drawing.Point(222, 31);
             this.comboBoxCityB.Name = "comboBoxCityB";
             this.comboBoxCityB.Size = new System.Drawing.Size(195, 21);
+            this.comboBoxCityB.Sorted = true;
             this.comboBoxCityB.TabIndex = 7;
             // 
             // comboBoxCityA
@@ -858,6 +859,7 @@
             this.comboBoxCityA.Location = new System.Drawing.Point(6, 30);
             this.comboBoxCityA.Name = "comboBoxCityA";
             this.comboBoxCityA.Size = new System.Drawing.Size(178, 21);
+            this.comboBoxCityA.Sorted = true;
             this.comboBoxCityA.TabIndex = 6;
             // 
             // buttonAdReservationSearchCoursesAB

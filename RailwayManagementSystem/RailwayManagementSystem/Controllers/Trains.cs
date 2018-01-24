@@ -33,8 +33,10 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC ADD_TRAIN " +
-                                 $"'{name}', '{model}'";
+                                 $"@name, @model";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@name", name);
+                sqlCommand.Parameters.AddWithValue("@model", model);
                 sqlCommand.ExecuteNonQuery();  
             }
             catch

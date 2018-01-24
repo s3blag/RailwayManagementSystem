@@ -14,8 +14,11 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC ADD_SEATS " +
-                                 $"{courseId}, {visitId}, {numberOfSeats}";
+                                 $"@courseID, @visitID, @numberOfSeats";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@courseID", courseId);
+                sqlCommand.Parameters.AddWithValue("@visitID", visitId);
+                sqlCommand.Parameters.AddWithValue("@numberOfSeats", numberOfSeats);
                 sqlCommand.ExecuteNonQuery();
             }
             catch
@@ -32,8 +35,11 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_SEATS {courseID}, '{stationA}', '{stationB}'", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_SEATS @courseID, @stationA, @stationB", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@courseID", courseID);
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@stationA", stationA);
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@stationB", stationB);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count == 0)

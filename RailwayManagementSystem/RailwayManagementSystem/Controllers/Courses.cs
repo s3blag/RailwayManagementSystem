@@ -12,8 +12,10 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_COURSES '{cityA}', '{cityB}'", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_COURSES @cityA, @cityB ", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@cityA", cityA);
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@cityB", cityB);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)
@@ -33,8 +35,10 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM SHOW_COURSES_WITH_AB('{cityA}', '{cityB}')", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM SHOW_COURSES_WITH_AB(@cityA, @cityB)", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@cityA", cityA);
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@cityB", cityB);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)
@@ -75,8 +79,9 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_COURSE_VISITS {courseID}", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_COURSE_VISITS @courseID", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@courseID", courseID);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)
@@ -98,8 +103,9 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC ADD_COURSE " +
-                                 $"'{trainId}'";
+                                 $"@trainID";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@trainID", trainId);
                 sqlCommand.ExecuteNonQuery();   
             }
             catch
@@ -118,8 +124,9 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM VISITS WHERE COURSE_ID = " + courseId, sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM VISITS WHERE COURSE_ID = @courseID", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@courseID", courseId);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     return dataTable.Rows.Count;
@@ -138,8 +145,9 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC DELETE_COURSE " +
-                                 $"'{courseId}'";
+                                 $"@courseID";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@courseID", courseId);
                 sqlCommand.ExecuteNonQuery();   
             }
             catch (Exception err)

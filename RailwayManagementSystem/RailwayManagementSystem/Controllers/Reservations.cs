@@ -6,14 +6,21 @@ namespace RailwayManagementSystem
 {
     internal static class Reservations
     {
-        public static bool AddReservations(SqlConnection sqlConnection, string customerId, string price, string courseId, string stationA, string stationB, string seatNumber)
+        public static bool AddReservations(SqlConnection sqlConnection, string customerId, 
+                            string price, string courseId, string stationA, string stationB, string seatNumber)
         {
             try
             {
                 sqlConnection.Open();
                 string command = $"EXEC ADD_RESERVATIONS " +
-                                 $"{customerId}, {price}, {courseId}, '{stationA}', '{stationB}', {seatNumber}";
+                                 $"@customerID, @price, @courseID, @stationA, @stationB, @seatNumber";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@customerID", customerId);
+                sqlCommand.Parameters.AddWithValue("@price", price);
+                sqlCommand.Parameters.AddWithValue("@courseID", courseId);
+                sqlCommand.Parameters.AddWithValue("@stationA", stationA);
+                sqlCommand.Parameters.AddWithValue("@stationB", stationB);
+                sqlCommand.Parameters.AddWithValue("@seatnNumber", seatNumber);
                 sqlCommand.ExecuteNonQuery();
 
             }
@@ -33,8 +40,9 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_CUSTOMER_RESERVATION {customerID}", sqlConnection))
+                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_CUSTOMER_RESERVATION @customerID", sqlConnection))
                 {
+                    sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@customerID", customerID);
                     DataTable dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)

@@ -33,8 +33,9 @@ namespace RailwayManagementSystem
             {
                 sqlConnection.Open();
                 string command = $"EXEC ADD_STATION " +
-                                 $"'{name}'";
+                                 $"@name";
                 SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                sqlCommand.Parameters.AddWithValue("@name", name);
                 sqlCommand.ExecuteNonQuery();  
             }
             catch
