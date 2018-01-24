@@ -111,6 +111,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dataGridViewReservations = new System.Windows.Forms.DataGridView();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,6 +131,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).BeginInit();
+            this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -635,17 +637,14 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.groupBox10);
             this.tabPage5.Controls.Add(this.groupBox7);
-            this.tabPage5.Controls.Add(this.groupBox11);
-            this.tabPage5.Controls.Add(this.groupBox6);
-            this.tabPage5.Controls.Add(this.groupBox8);
-            this.tabPage5.Controls.Add(this.groupBox5);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(700, 391);
             this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "Dodaj";
+            this.tabPage5.Text = "Rezerwacje";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // groupBox7
@@ -653,9 +652,9 @@
             this.groupBox7.Controls.Add(this.buttonSearchReserv);
             this.groupBox7.Controls.Add(this.textBoxUserIdReserv);
             this.groupBox7.Controls.Add(this.label30);
-            this.groupBox7.Location = new System.Drawing.Point(11, 7);
+            this.groupBox7.Location = new System.Drawing.Point(3, 7);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(686, 93);
+            this.groupBox7.Size = new System.Drawing.Size(694, 93);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Wyszukaj rezerwację";
@@ -690,16 +689,16 @@
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.buttonAddReservation);
-            this.groupBox11.Location = new System.Drawing.Point(11, 268);
+            this.groupBox11.Location = new System.Drawing.Point(6, 194);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(686, 60);
+            this.groupBox11.Size = new System.Drawing.Size(682, 60);
             this.groupBox11.TabIndex = 8;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "4.Dokonaj rezerwacji";
             // 
             // buttonAddReservation
             // 
-            this.buttonAddReservation.Location = new System.Drawing.Point(265, 19);
+            this.buttonAddReservation.Location = new System.Drawing.Point(279, 19);
             this.buttonAddReservation.Name = "buttonAddReservation";
             this.buttonAddReservation.Size = new System.Drawing.Size(119, 30);
             this.buttonAddReservation.TabIndex = 9;
@@ -710,7 +709,7 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.buttonAddReservationSaveCourseID);
-            this.groupBox6.Location = new System.Drawing.Point(524, 106);
+            this.groupBox6.Location = new System.Drawing.Point(519, 32);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(170, 70);
             this.groupBox6.TabIndex = 0;
@@ -738,9 +737,9 @@
             this.groupBox8.Controls.Add(this.label29);
             this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerSurname);
             this.groupBox8.Controls.Add(this.textBoxAddReservationSearchCustomerName);
-            this.groupBox8.Location = new System.Drawing.Point(11, 177);
+            this.groupBox8.Location = new System.Drawing.Point(6, 103);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(686, 85);
+            this.groupBox8.Size = new System.Drawing.Size(682, 85);
             this.groupBox8.TabIndex = 0;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "3. Podaj dane istniejącego użytkownika";
@@ -837,7 +836,7 @@
             this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Controls.Add(this.label23);
             this.groupBox5.Controls.Add(this.label24);
-            this.groupBox5.Location = new System.Drawing.Point(11, 106);
+            this.groupBox5.Location = new System.Drawing.Point(6, 32);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(510, 70);
             this.groupBox5.TabIndex = 6;
@@ -893,7 +892,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(190, 34);
+            this.label24.Location = new System.Drawing.Point(196, 34);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(16, 13);
             this.label24.TabIndex = 4;
@@ -906,6 +905,19 @@
             this.dataGridViewReservations.Name = "dataGridViewReservations";
             this.dataGridViewReservations.Size = new System.Drawing.Size(711, 351);
             this.dataGridViewReservations.TabIndex = 1;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.groupBox5);
+            this.groupBox10.Controls.Add(this.groupBox11);
+            this.groupBox10.Controls.Add(this.groupBox8);
+            this.groupBox10.Controls.Add(this.groupBox6);
+            this.groupBox10.Location = new System.Drawing.Point(3, 106);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(694, 279);
+            this.groupBox10.TabIndex = 10;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Dodaj rezerwację";
             // 
             // CashierForm
             // 
@@ -945,6 +957,7 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReservations)).EndInit();
+            this.groupBox10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1032,5 +1045,6 @@
         private System.Windows.Forms.Button buttonSearchReserv;
         private System.Windows.Forms.TextBox textBoxUserIdReserv;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox groupBox10;
     }
 }

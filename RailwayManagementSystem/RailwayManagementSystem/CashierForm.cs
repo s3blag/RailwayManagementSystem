@@ -45,6 +45,7 @@ namespace RailwayManagementSystem
             textBoxAddReservationSearchCustomerSurname.TextChanged += textBoxSearch_TextChangedReservation;
             textBoxAddReservationSearchCustomerEmail.TextChanged += textBoxSearch_TextChangedReservation;
             textBoxAddReservationSearchCustomerPhoneNumber.TextChanged += textBoxSearch_TextChangedReservation;
+            tabControl1.SelectedIndexChanged += tabControl2_Click;
         }
 
         private void buttonSearchAtoB_Click(object sender, EventArgs e)
@@ -195,22 +196,23 @@ namespace RailwayManagementSystem
         }
 
         private void tabControl2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                comboBoxCityA.Items.Clear();
-                comboBoxCityB.Items.Clear();
-                var stations = Stations.GetAllStations(_sqlConnection);
-                for (int i = 0; i < stations.Rows.Count; i++)
+        {   
+            if(tabControl1.SelectedIndex == 2)
+                try
                 {
-                    comboBoxCityA.Items.Add(stations.Rows[i][1].ToString());
-                    comboBoxCityB.Items.Add(stations.Rows[i][1].ToString());
+                    comboBoxCityA.Items.Clear();
+                    comboBoxCityB.Items.Clear();
+                    var stations = Stations.GetAllStations(_sqlConnection);
+                    for (int i = 0; i < stations.Rows.Count; i++)
+                    {
+                        comboBoxCityA.Items.Add(stations.Rows[i][1].ToString());
+                        comboBoxCityB.Items.Add(stations.Rows[i][1].ToString());
+                    }
                 }
-            }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+                catch(Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
         }
 
         private void buttonAddReservationSaveSelectedCustomer_Click(object sender, EventArgs e)
