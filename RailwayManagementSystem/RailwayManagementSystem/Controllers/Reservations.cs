@@ -20,7 +20,7 @@ namespace RailwayManagementSystem
                 sqlCommand.Parameters.AddWithValue("@courseID", courseId);
                 sqlCommand.Parameters.AddWithValue("@stationA", stationA);
                 sqlCommand.Parameters.AddWithValue("@stationB", stationB);
-                sqlCommand.Parameters.AddWithValue("@seatnNumber", seatNumber);
+                sqlCommand.Parameters.AddWithValue("@seatNumber", seatNumber);
                 sqlCommand.ExecuteNonQuery();
 
             }
