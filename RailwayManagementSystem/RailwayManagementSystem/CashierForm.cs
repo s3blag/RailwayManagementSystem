@@ -254,9 +254,14 @@ namespace RailwayManagementSystem
             }
         }
 
-        private void buttonSearchReservation_Click(object sender, EventArgs e)
+        private void CashierForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            string id = textBoxSearchReservationCustomerID.Text;
+            _sqlConnection.Dispose();
+        }
+
+        private void buttonSearchReserv_Click(object sender, EventArgs e)
+        {
+            string id = textBoxUserIdReserv.Text;
 
             if (id.All(char.IsDigit) && id != "")
             {
@@ -273,11 +278,6 @@ namespace RailwayManagementSystem
                 MessageBox.Show("ID musi być liczbą!");
                 textBoxCourseVisits.Text = "";
             }
-        }
-
-        private void CashierForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _sqlConnection.Dispose();
         }
     }
 }
