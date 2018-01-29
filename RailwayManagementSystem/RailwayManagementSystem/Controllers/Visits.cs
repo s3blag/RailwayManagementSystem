@@ -32,7 +32,7 @@ namespace RailwayManagementSystem
                 string command = $"EXEC ADD_VISIT " +
                                  $"@stationID, @courseID," +
                                  $"@visitOrder, @availableSeats, @date";
-                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                var sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@stationID", visitData.stationID);
                 sqlCommand.Parameters.AddWithValue("@courseID", visitData.courseID);
                 sqlCommand.Parameters.AddWithValue("@visitOrder", visitData.visitOrder);
@@ -57,12 +57,12 @@ namespace RailwayManagementSystem
             try
             {
 
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(
+                using (var sqlDataAdapter = new SqlDataAdapter(
                     $"SELECT ID FROM VISITS WHERE COURSE_ID = @courseID AND VISIT_ORDER = @visitOrder", sqlConnection))
                 {
                     sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@courseID", courseId);
                     sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@visitOrder", visitOrder);
-                    DataTable dataTable = new DataTable();
+                    var dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     string test = dataTable.Rows[0][0].ToString();
                     return dataTable.Rows[0][0].ToString();

@@ -32,9 +32,9 @@ namespace RailwayManagementSystem
         {   
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM Show_Customers", sqlConnection))
+                using (var sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM Show_Customers", sqlConnection))
                 {
-                    DataTable dataTable = new DataTable();
+                    var dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)
                         return dataTable;
@@ -58,7 +58,7 @@ namespace RailwayManagementSystem
                                  $"@name, @surname," +
                                  $"@address, @city, @zipCode," +
                                  $"@phoneNumber, @email";
-                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                var sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@name", customerData.name);
                 sqlCommand.Parameters.AddWithValue("@surname", customerData.surname);
                 sqlCommand.Parameters.AddWithValue("@address", customerData.address);

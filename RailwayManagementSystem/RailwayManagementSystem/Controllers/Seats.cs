@@ -15,7 +15,7 @@ namespace RailwayManagementSystem
                 sqlConnection.Open();
                 string command = $"EXEC ADD_SEATS " +
                                  $"@courseID, @visitID, @numberOfSeats";
-                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                var sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@courseID", courseId);
                 sqlCommand.Parameters.AddWithValue("@visitID", visitId);
                 sqlCommand.Parameters.AddWithValue("@numberOfSeats", numberOfSeats);
@@ -35,16 +35,16 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_SEATS @courseID, @stationA, @stationB", sqlConnection))
+                using (var sqlDataAdapter = new SqlDataAdapter($"EXEC SHOW_AVAIBLE_SEATS @courseID, @stationA, @stationB", sqlConnection))
                 {
                     sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@courseID", courseID);
                     sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@stationA", stationA);
                     sqlDataAdapter.SelectCommand.Parameters.AddWithValue("@stationB", stationB);
-                    DataTable dataTable = new DataTable();
+                    var dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count == 0)
                         return -1;
-                    Random rnd = new Random();
+                    var rnd = new Random();
                     int seat = rnd.Next(dataTable.Rows.Count);
                     int seatIndex = Int32.Parse(dataTable.Rows[seat][0].ToString());
                     return seatIndex;

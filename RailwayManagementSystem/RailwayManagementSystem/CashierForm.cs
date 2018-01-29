@@ -55,7 +55,7 @@ namespace RailwayManagementSystem
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
+                using (var dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
                 {
                     if (dataTable != null)
                         dataGridViewCourses.DataSource = dataTable;
@@ -134,7 +134,7 @@ namespace RailwayManagementSystem
             string email = textBoxSearchByEmail.Text;
             string phoneNumber = textBoxSearchByPhoneNumber.Text;
 
-            DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
+            var dataTable = (DataTable)dataGridViewCustomers.DataSource;
     
             string rowFilter = string.Format("Imię LIKE '{0}%'", name);
             rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
@@ -151,7 +151,7 @@ namespace RailwayManagementSystem
             string email = textBoxAddReservationSearchCustomerEmail.Text;
             string phoneNumber = textBoxAddReservationSearchCustomerPhoneNumber.Text;
 
-            DataTable dataTable = (DataTable)dataGridViewCustomers.DataSource;
+            var dataTable = (DataTable)dataGridViewCustomers.DataSource;
 
             string rowFilter = string.Format("Imię LIKE '{0}%'", name);
             rowFilter += string.Format("AND Nazwisko LIKE '{0}%'", surname);
@@ -169,7 +169,7 @@ namespace RailwayManagementSystem
 
             if (!cityA.Any(char.IsDigit) && !cityB.Any(char.IsDigit) && cityA.Any(char.IsLetter) && cityB.Any(char.IsLetter))
             {
-                using (DataTable dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
+                using (var dataTable = Courses.GetAvaibleCoursesFromAtoB(_sqlConnection, cityA, cityB))
                 {
                     if (dataTable != null)
                         dataGridViewReservations.DataSource = dataTable;
@@ -267,7 +267,7 @@ namespace RailwayManagementSystem
 
             if (id.All(char.IsDigit) && id != "")
             {
-                using (DataTable dataTable = Reservations.GetCustomerReservations(_sqlConnection, id))
+                using (var dataTable = Reservations.GetCustomerReservations(_sqlConnection, id))
                 {
                     if (dataTable != null)
                         dataGridViewReservations.DataSource = dataTable;

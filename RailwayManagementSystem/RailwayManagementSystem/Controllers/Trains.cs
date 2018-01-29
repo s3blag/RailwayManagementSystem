@@ -10,9 +10,9 @@ namespace RailwayManagementSystem
         {
             try
             {
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM Show_Trains", sqlConnection))
+                using (var sqlDataAdapter = new SqlDataAdapter($"SELECT * FROM Show_Trains", sqlConnection))
                 {
-                    DataTable dataTable = new DataTable();
+                    var dataTable = new DataTable();
                     sqlDataAdapter.Fill(dataTable);
                     if (dataTable.Rows.Count != 0)
                         return dataTable;
@@ -34,7 +34,7 @@ namespace RailwayManagementSystem
                 sqlConnection.Open();
                 string command = $"EXEC ADD_TRAIN " +
                                  $"@name, @model";
-                SqlCommand sqlCommand = new SqlCommand(command, sqlConnection);
+                var sqlCommand = new SqlCommand(command, sqlConnection);
                 sqlCommand.Parameters.AddWithValue("@name", name);
                 sqlCommand.Parameters.AddWithValue("@model", model);
                 sqlCommand.ExecuteNonQuery();  
